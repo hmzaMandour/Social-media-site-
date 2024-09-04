@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import images from "../../constant/images";
 
 import { WiDaySunny } from "react-icons/wi";
@@ -21,6 +22,8 @@ export const AboutSocial = () => {
   const toggleDarkMode = () => {
     setDarkMode(!darkMode);
   };
+
+  const navigate = useNavigate();
 
   return (
     <>
@@ -48,10 +51,10 @@ export const AboutSocial = () => {
                       <CiDark size={24} className="text-[#e040fb]" />
                     )}
                   </button>
-                  <button className="login-btn text-white bg-[#e040fb] py-[8px] px-7 rounded-[20px] text-[13px] font-semibold cursor-pointer hover:bg-[#ea80fc]">
-                    LOG IN
+                  <button onClick={() => { navigate("/signIn") }} className="login-btn text-white bg-[#e040fb] py-[8px] px-7 rounded-[20px] text-[13px] font-semibold cursor-pointer hover:bg-[#ea80fc]">
+                    SIGN IN
                   </button>
-                  <button className="signup-btn  text-white bg-[#e040fb] py-[8px] px-7 rounded-[20px] text-[13px] font-semibold cursor-pointer  hover:bg-[#ea80fc]">
+                  <button onClick={() => { navigate("/signUp") }} className="signup-btn  text-white bg-[#e040fb] py-[8px] px-7 rounded-[20px] text-[13px] font-semibold cursor-pointer  hover:bg-[#ea80fc]">
                     SIGN UP
                   </button>
                 </div>
