@@ -11,11 +11,10 @@ export const Home = () => {
   return (
     <>
       <Routes>
-        <Route path="/" element={<AboutSocial />}></Route>
-        <Route path="/profile" element = {<UserProfile/>}></Route>
-        <Route path="/users" element = {<UsersProfile/>}></Route>
+      <Route path="/" element={<AboutSocial />}></Route>
 
-
+        <Route path="/users" element={<UsersProfile/>}></Route>
+        <Route path="/profile" element={<UserProfile/>}></Route>
         <Route path="/signup" element={<Signup />} />
         <Route path="/signin" element={<SignIn />} />
       </Routes>
