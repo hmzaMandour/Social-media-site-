@@ -1,5 +1,4 @@
 import React from 'react';
-import { BiEdit } from 'react-icons/bi';
 import { BiEditAlt } from 'react-icons/bi';
 
 const UserProfile = () => {
