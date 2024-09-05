@@ -113,6 +113,17 @@ const UsersProfile = () => {
 
                         {/* right part */}
                         <div className='flex flex-col gap-5 w-[70%]'>
+                            
+                            <div className='rounded-md border-solid border-[1px] border-gray-400 p-3 w-[100%]'>
+                                <p className='font-bold pb-2'>
+                                    Bio
+                                </p>
+                                <p>
+                                    {/* bio content */}
+                                </p>
+
+                            </div>
+
                             <div className=' flex justify-between  bg-white rounded-md border-solid border-[1px] border-gray-400 p-3 w-[100%]'>
                                 <p className='font-bold'>
                                     Posts
