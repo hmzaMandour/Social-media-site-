@@ -74,19 +74,17 @@ export const AboutSocial = () => {
                   over noise. Join us and make your time online truly
                   worthwhile.
                 </p>
-                <a
-                  href="#"
-                  className="text-[#e040fb] text-[12px] font-semibold underline"
-                >
+                <p className="text-[#e040fb] text-[12px] font-semibold underline cursor-pointer">
                   Know More about us...
-                </a>
+                </p>
+                
               </div>
             </div>
 
             <div className="right-part">
               <img
-                src={images.aboutImg}
-                className="rounded-3xl w-[110vw] h-[90vh]   shadow-[0_10px_20px_rgba(224,64,251,_0.5)] object-cover"
+                src={images.home}
+                className="rounded-3xl w-[110vw] h-[90vh] shadow-[0_10px_20px_rgba(224,64,251,_0.5)] object-cover"
               />
             </div>
           </div>

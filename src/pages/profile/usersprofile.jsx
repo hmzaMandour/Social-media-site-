@@ -10,19 +10,38 @@ const UsersProfile = () => {
     return (
         <>
             <div className='p-10'>
-                <p className='font-bold text-[20px] pb-5'>Profile</p>
-                <div className='shadow-[0_3px_10px_rgb(0,0,0,0.2)] rounded-2xl p-5'>
+                <p className='font-bold text-[20px] pb-5'>
+                    Profile
+                </p>
 
+                <div className='shadow-[0_3px_10px_rgb(0,0,0,0.2)] rounded-2xl p-5'>
 
                     {/* top part */}
                     <div className='userPic flex  items-center gap-5 border-b-[1px] border-gray-400 pb-10 pt-5 px-10'>
-                        <img src="" alt="" className='bg-red-300 w-[100px] h-[100px] rounded-[50%] ' />
+                        <img 
+                            src="" 
+                            alt="" 
+                            className='bg-red-300 w-[100px] h-[100px] rounded-[50%] ' 
+                        />
+
+                        {/* info div */}
                         <div>
-                            <p className='font-semibold'>Full Name</p>
-                            <p className='pb-3 text-[13px]'>3 mutual friends</p>
+                            <p className='font-semibold'>
+                                Full Name
+                            </p>
+                            <p className='pb-3 text-[13px]'>
+                                3 mutual friends
+                            </p>
+
                             <div className='flex gap-2'>
-                                <button className=' flex items-center gap-2 text-white bg-[#e040fb] py-[8px] px-7 rounded-[20px] text-[13px] font-semibold cursor-pointer hover:bg-[#ea80fc]'><SlUserFollow/> Follow</button>
-                                <button className='flex items-center gap-2 m-0 text-white bg-[#e040fb] py-[8px] px-7 rounded-[20px] text-[13px] font-semibold cursor-pointer hover:bg-[#ea80fc]'><BiMessage/> Message</button>
+                                <button 
+                                    className=' flex items-center gap-2 text-white bg-[#e040fb] py-[8px] px-7 rounded-[20px] text-[13px] font-semibold cursor-pointer hover:bg-[#ea80fc]'>
+                                    <SlUserFollow/> Follow
+                                </button>
+                                <button 
+                                    className='flex items-center gap-2 m-0 text-white bg-[#e040fb] py-[8px] px-7 rounded-[20px] text-[13px] font-semibold cursor-pointer hover:bg-[#ea80fc]'>
+                                    <BiMessage/> Message
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -31,7 +50,9 @@ const UsersProfile = () => {
                     {/* links */}
                     <div className='pt-10 px-10'>
                         <ul className='flex gap-8 font-semibold'>
-                            <li className='text-[#e040fb] border-b-[1px]'>Posts</li>
+                            <li className='text-[#e040fb] border-b-[1px]'>
+                                Posts
+                            </li>
                             {/* <li><a href="">About</a></li>
                             <li><a href="">Friends</a></li>
                             <li><a href="">Photos</a></li>
@@ -46,15 +67,23 @@ const UsersProfile = () => {
                         {/* left part */}
                         <div className=' flex flex-col gap-5 w-[30%]'>
                             <div className='bg-white rounded-md border-solid border-[1px] border-gray-400 p-3 w-[100%]'>
-                                <p className='font-bold pb-2'>Intro</p>
-                                <p className='flex items-center gap-2'><GoLocation/>Lives in <span className='font-semibold'>Casablanca, Morocco</span></p>
+                                <p className='font-bold pb-2'>
+                                    Intro
+                                </p>
+                                <p className='flex items-center gap-2'>
+                                    <GoLocation/>Lives in <span className='font-semibold'>Casablanca, Morocco</span>
+                                </p>
                             </div>
 
                             {/* gallery div */}
                             <div className='bg-white rounded-md border-solid border-[1px] border-gray-400 p-3 w-[100%]'>
                             <div className='flex justify-between'> 
-                                <p className='font-bold pb-2'>Photos</p>
-                                <p className='text-[#ea80fc] underline text-[14px]'>See all photos </p>
+                                <p className='font-bold pb-2'>
+                                    Photos
+                                </p>
+                                <p className='text-[#ea80fc] underline text-[14px]'>
+                                    See all photos
+                                </p>
                             </div>
 
                             <div className='flex flex-col gap-2'>
@@ -85,8 +114,13 @@ const UsersProfile = () => {
                         {/* right part */}
                         <div className='flex flex-col gap-5 w-[70%]'>
                             <div className=' flex justify-between  bg-white rounded-md border-solid border-[1px] border-gray-400 p-3 w-[100%]'>
-                                <p className='font-bold'>Posts</p>
-                                <button className='flex m-0 gap-2 text-[#ea80fc] underline text-[14px]'>Filters</button>
+                                <p className='font-bold'>
+                                    Posts
+                                </p>
+                                <button 
+                                    className='flex m-0 gap-2 text-[#ea80fc] underline text-[14px]'>
+                                    Filters
+                                </button>
                             </div>
 
                             {/* posts div */}
@@ -94,28 +128,8 @@ const UsersProfile = () => {
                             </div>
 
                         </div>
-
-                        
-
-
-                        
-                        
-
-
-
-
                     </div>
-                    
-
-
-                    
-
-
-                    
                 </div>
-
-
-
             </div>
             
         </>
