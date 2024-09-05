@@ -1,16 +1,23 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
+
 import images from "../../constant/images";
+
 
 import { CiDark } from "react-icons/ci";
 
 
 export const Signup = () => {
+
+  const navigate = useNavigate();
+
+
   return (
     <>
     <nav className="flex justify-between pt-5 px-10 m-0 items-center ">
         <div className="logo m-0">
-            <p className="font-bold m-0 text-[28px] cursor-pointer">
-                FRIDAT
+            <p onClick={() => { navigate("/") }} className="font-bold m-0 text-[28px] cursor-pointer text-[#6e009e]">
+              FRIDAT<span className="text-[#e040fb] text-3xl">.</span>
             </p>
         </div>
         <div>
@@ -23,8 +30,8 @@ export const Signup = () => {
 
     <div className="h-[85vh] w-[100vw] bg-white overflow-hidden flex justify-center items-center">
       <div className="h-[70vh] w-[60vw] flex signup-container justify-center items-center rounded-[30px] bg-white backdrop-blur-md  ">
-        <div className="h-[100%] w-[60%] rounded-l-[30px] flex flex-col items-center justify-center gap-[2vh]">
-          <h1 className="text-2xl text-[#e040fb] font-bold pt-3 pb-2 ">Sign Up!</h1>
+        <div className="h-[100%] w-[60%] rounded-l-[30px] flex flex-col items-center justify-center gap-[10px]">
+          <h1 className="text-2xl text-[#6e009e] font-bold pt-3 pb-2 ">Sign Up!</h1>
           <div>
             <input
               className="h-[45px] shadow-border w-[300px] rounded-[20px] px-5 shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)] "
@@ -64,9 +71,13 @@ export const Signup = () => {
             </select>
           </div>
           <div className="overflow-hidden rounded-[20px]  h-[45px] w-[200px]">
-            <button className="signup-button  h-[100%] w-[100%] rounded-[20px]  text-white   text-[14px] font-semibold cursor-pointer hover:bg-[#ea80fc]">
+            <button className="signup-button  h-[100%] w-[100%] rounded-[20px]  text-white   text-[14px] font-semibold cursor-pointer hover:bg-[#b535eb]">
               Create Account
             </button>
+          </div>
+
+          <div>
+            <button onClick={() => { navigate("/signIn") }} className="text-[#b535eb] underline font-semibold text-[14px]">Log in</button>
           </div>
         </div>
 

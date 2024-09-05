@@ -35,11 +35,11 @@ const UsersProfile = () => {
 
                             <div className='flex gap-2'>
                                 <button 
-                                    className=' flex items-center gap-2 text-white bg-[#e040fb] py-[8px] px-7 rounded-[20px] text-[13px] font-semibold cursor-pointer hover:bg-[#ea80fc]'>
+                                    className=' flex items-center gap-2 text-white bg-[#6e009e] py-[8px] px-7 rounded-[20px] text-[13px] font-semibold cursor-pointer hover:bg-[#b535eb]'>
                                     <SlUserFollow/> Follow
                                 </button>
                                 <button 
-                                    className='flex items-center gap-2 m-0 text-white bg-[#e040fb] py-[8px] px-7 rounded-[20px] text-[13px] font-semibold cursor-pointer hover:bg-[#ea80fc]'>
+                                    className='flex items-center gap-2 m-0 text-white bg-[#6e009e] py-[8px] px-7 rounded-[20px] text-[13px] font-semibold cursor-pointer hover:bg-[#b535eb]'>
                                     <BiMessage/> Message
                                 </button>
                             </div>
@@ -50,7 +50,7 @@ const UsersProfile = () => {
                     {/* links */}
                     <div className='pt-10 px-10'>
                         <ul className='flex gap-8 font-semibold'>
-                            <li className='text-[#e040fb] border-b-[1px]'>
+                            <li className='text-[#6e009e] border-b-[1px] cursor-pointer'>
                                 Posts
                             </li>
                             {/* <li><a href="">About</a></li>
@@ -81,7 +81,7 @@ const UsersProfile = () => {
                                 <p className='font-bold pb-2'>
                                     Photos
                                 </p>
-                                <p className='text-[#ea80fc] underline text-[14px]'>
+                                <p className='text-[#ea80fc] underline text-[14px] cursor-pointer'>
                                     See all photos
                                 </p>
                             </div>

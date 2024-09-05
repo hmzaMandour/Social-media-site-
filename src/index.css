@@ -13,15 +13,12 @@
 
 
 .signup-button {
-    background: #e040fb;
+    background: #6e009e;
 }
-.signup-button:hover{
+/* .signup-button:hover{
     transition: 0.5s;
     transform: scale(1.1);
-
-
-
-}
+} */
 .backdrop-blur-md {
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px); 

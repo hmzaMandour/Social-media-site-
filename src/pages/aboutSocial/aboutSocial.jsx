@@ -39,8 +39,8 @@ export const AboutSocial = () => {
               {/* nav bar */}
               <nav className="flex justify-between pt-5 m-0 items-center">
                 <div className="logo m-0">
-                  <p className="font-bold m-0 text-[28px] cursor-pointer">
-                    FRIDAT
+                  <p className="font-bold m-0 text-[28px] cursor-pointer text-[#6e009e]">
+                    <span className={darkMode ? " text-white  h-screen" : " text-[#6e009e]"}>FRIDAT</span><span className="text-[#e040fb] text-3xl">.</span>
                   </p>
                 </div>
                 <div className="buttons flex gap-2">
@@ -51,10 +51,10 @@ export const AboutSocial = () => {
                       <CiDark size={24} className="text-[#e040fb]" />
                     )}
                   </button>
-                  <button onClick={() => { navigate("/signIn") }} className="login-btn text-white bg-[#e040fb] py-[8px] px-7 rounded-[20px] text-[13px] font-semibold cursor-pointer hover:bg-[#ea80fc]">
-                    SIGN IN
+                  <button onClick={() => { navigate("/signIn") }} className="login-btn text-white bg-[#6e009e] py-[8px] px-7 rounded-[20px] text-[13px] font-semibold cursor-pointer hover:bg-[#b535eb]">
+                    LOG IN
                   </button>
-                  <button onClick={() => { navigate("/signUp") }} className="signup-btn  text-white bg-[#e040fb] py-[8px] px-7 rounded-[20px] text-[13px] font-semibold cursor-pointer  hover:bg-[#ea80fc]">
+                  <button onClick={() => { navigate("/signUp") }} className="signup-btn  text-white bg-[#6e009e] py-[8px] px-7 rounded-[20px] text-[13px] font-semibold cursor-pointer  hover:bg-[#b535eb]">
                     SIGN UP
                   </button>
                 </div>
