@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import images from "../../constant/images";
 import { CiDark } from "react-icons/ci";
@@ -7,7 +7,79 @@ import { dataContext } from "../../App";
 export const Signup = () => {
   let obj = useContext(dataContext);
 
+  const [isValidEmail, setIsValidEmail] = useState(false);
+  const [isValidPass, setIsValidPass] = useState(false);
+
+
+  const [isNameEmpty, setisNameEmpty] = useState(true);
+  const [isEmailEmpty, setisEmailEmpty] = useState(true);
+  const [isPasswordEmpty, setisPasswordEmpty] = useState(true);
+
   const navigate = useNavigate();
+
+  //^ name check------------------
+
+  function nameFormating(name = "") {
+    let scndName = name.trim();
+    scndName =
+      scndName.charAt(0).toUpperCase() + scndName.slice(1).toLowerCase();
+
+    if (scndName.includes(" ")) {
+      let newName = "";
+      let splitArr = scndName.split(" ");
+      splitArr.forEach((ele) => {
+        newName +=
+          ele.charAt(0).toUpperCase() + ele.slice(1).toLowerCase() + " ";
+      });
+      scndName = newName.trim();
+    }
+
+    if(scndName === "") {
+      setisNameEmpty(true)
+    }
+
+    setisNameEmpty(false)
+    return scndName;
+  }
+  //^ name check end---------------
+
+  //^ Email check -----------------
+
+  const handleEmailChange = (email) => {
+    const newEmail = email;
+
+    // Basic email validation using a regular expression
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    setIsValidEmail(emailRegex.test(newEmail))
+
+    obj.email = newEmail;
+    setisEmailEmpty(false)
+
+    if(email === "") {
+      setisEmailEmpty(true)
+    }
+  };
+
+  //^ Email check end---------------
+
+  //^ Password check -----------------
+
+  const handlePasswordChange = (pass) => {
+    const newPassword = pass;
+
+    // Basic email validation using a regular expression
+    const passwordRegex = /^(?=.*[a-zA-Z])(?=.*\d)[^\s]{8,}$/;
+    setIsValidPass(passwordRegex.test(newPassword))
+
+    obj.password = newPassword;
+    setisPasswordEmpty(false)
+
+    if(pass === "") {
+      setisPasswordEmpty(true)
+    }
+  };
+
+  //^ Password check end---------------
 
   return (
     <>
@@ -38,7 +110,7 @@ export const Signup = () => {
             <div>
               <input
                 onChange={(e) => {
-                  obj.name = e.target.value;
+                  obj.name = nameFormating(e.target.value);
                 }}
                 className="h-[45px] shadow-border w-[300px] rounded-[15px] px-5 shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)] "
                 placeholder="FullName"
@@ -47,23 +119,23 @@ export const Signup = () => {
             </div>
             <div>
               <input
-                onChange={(e) => {
-                  obj.email = e.target.value;
-                }}
+                id="email"
+                onChange={(e) => handleEmailChange(e.target.value)}
                 className="h-[45px] shadow-border w-[300px] rounded-[15px] px-5 shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)]"
                 placeholder="E-mail"
                 type="email"
+                
               />
+              {isValidEmail ? <p className="ps-5 text-green-500">Email is valid</p> : <p className="ps-5 text-red-500">Email is invalid</p>}
             </div>
             <div>
               <input
-                onChange={(e) => {
-                  obj.password = e.target.value;
-                }}
+                onChange={(e) => handlePasswordChange(e.target.value)}
                 className="h-[45px] shadow-border w-[300px] rounded-[15px] px-5 shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)]"
                 placeholder="Password"
                 type="password"
               />
+              {isValidPass ? <p className="ps-5 text-green-500">Password is valid</p> : <p className="ps-5 text-red-500">Password is invalid</p>}
             </div>
             <div>
               <input
@@ -78,12 +150,11 @@ export const Signup = () => {
             <div className="px-5">
               <select
                 className="px-4 h-[45px] shadow-border w-[300px] rounded-[15px] bg-white flex justify-center items-center text-[#9ca3af] gap-[130px] shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)]"
-                onSelect={(e) => {
-                  obj.gender = e.target.value;
+                onClick={(e) => {
+                  obj.gender = e.target.select;
                 }}
                 name=""
               >
-                
                 <option value="Male">Male</option>
                 <option value="Female">Female</option>
               </select>
@@ -91,9 +162,11 @@ export const Signup = () => {
             <div className="overflow-hidden rounded-[15px]  h-[45px] w-[200px]">
               <button
                 onClick={() => {
-                  navigate("/signIn");
-                  console.log(obj);
-                  
+                  if (isNameEmpty !== true && isEmailEmpty !== true && isPasswordEmpty !== true) {
+                    navigate("/signIn");
+                  } else {
+                    alert("Fill all Fields")
+                  }
                 }}
                 className="signup-button  h-[100%] w-[100%] rounded-[20px]  text-white   text-[14px] font-semibold cursor-pointer hover:bg-[#b535eb]"
               >
