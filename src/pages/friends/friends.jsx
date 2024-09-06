@@ -1,7 +1,6 @@
 import { useState } from "react";
 import React from 'react';
-import { CgProfile } from "react-icons/cg";
-import { MdLogout, MdAdminPanelSettings, MdDarkMode } from "react-icons/md";
+
 import { SlUserFollow } from "react-icons/sl";
 import { IoLocationOutline } from "react-icons/io5";
 import { FaUserFriends } from "react-icons/fa";
@@ -10,11 +9,7 @@ export const Friend =() =>{
   const [modal, setModal] = useState(false);
   const [iconStates, setIconStates] = useState({});
 
-  const mymodal = () => {
-    setTimeout(() => {
-      setModal(mdl => !mdl);
-    }, 100);
-  };
+
 
   const friends = {
     friend1: {
@@ -44,38 +39,11 @@ export const Friend =() =>{
   };
 
   return (
-    <div className="h-[100%]  w-[100%] flex justify-center items-center flex-col relative">
-      <button onClick={mymodal} className="h-[50px] w-20 bg-red-500 rounded-full">helll</button>
-      {
-        modal && (
-          <div className="flex justify-center items-center absolute top-[50px] flex-col">
-            <div className="epsi bg-[#3a3b3c]"></div>
-            <div className="bg-[#3a3b3c] opsi h-[400px] w-[250px] rounded-[20px] flex justify-center items-center flex-col gap-2">
-              <div className="h-[60px] w-[60px] bg-red-500 rounded-full"></div>
-              <div className="h-[60px] w-[80%]  hover:bg-[#5d5f61] rounded-[20px] flex justify-center items-center gap-[85px]">
-                <div className="text-2xl text-[#e7e9ec] p-2 rounded-full bg-[#4e4f50]"><CgProfile /></div>
-                <div className="text-[#e2e4e8]">Profile</div>
-              </div>
-              <div className="h-[60px] w-[80%] bg-[#] hover:bg-[#5d5f61] rounded-[20px] flex justify-center items-center gap-[55px]">
-                <div className="text-2xl text-[#e7e9ec] p-2 rounded-full bg-[#4e4f50]"><MdDarkMode /></div>
-                <div className="text-[#e2e4e8]">DarkMode</div>
-              </div>
-              <div className="h-[60px] w-[80%] bg-[#] hover:bg-[#5d5f61] rounded-[20px] flex justify-center items-center gap-[70px]">
-                <div className="text-2xl text-[#e7e9ec] p-2 rounded-full bg-[#4e4f50]"><MdAdminPanelSettings /></div>
-                <div className="text-[#e2e4e8]">Settings</div>
-              </div>
-              <div className="h-[60px] w-[80%] bg-[#] hover:bg-[#5d5f61] rounded-[20px] flex justify-center items-center gap-[70px]">
-                <div className="text-2xl text-[#e7e9ec] p-2 rounded-full bg-[#4e4f50]"><MdLogout /></div>
-                <div className="text-[#e2e4e8]">LogOut</div>
-              </div>
-            </div>
-          </div>
-        )
-      }
-      <div className="w-[280px] snapa overflow-x-auto flex gap-2">
+
+      <div className="w-[240px] snapa overflow-x-auto flex gap-2">
         {
           valuesArray.map(([key, e], index) => {
-            const isFollowing = iconStates[index] || false; // Default to false if not set
+            const isFollowing = iconStates[index] || false;
             return (
               <div key={key} className='ml-2 shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)] mt-[100px] justify-center items-center  inline-block rounded-lg px-3  py-5'>
                 <div className='flex justify-end '>
@@ -117,8 +85,5 @@ export const Friend =() =>{
           })
         }
       </div>
-    </div>
   );
 }
-
-
