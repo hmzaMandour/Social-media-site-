@@ -22,7 +22,7 @@ export const Side = () => {
 
   return (
     <>
-    <div className="w-[100vw] h-full bg-[#edebeb81]">
+    <div className="h-full ">
       {/* <nav className='flex justify-between px-[6vw] m-0 items-center  h-[13vh] bg-white'>
             <div className="logo m-0">
                 <p className="font-bold m-0 text-[28px] cursor-pointer text-[#6e009e]">
@@ -43,9 +43,9 @@ export const Side = () => {
 
       </nav> */}
 
-      <div className=" pl-[5vw] pt-5 " >
+      <div className="  " >
       {/* side bar */}
-      <div className="sideBar flex flex-col gap-5 rounded-xl w-[20%] ">
+      <div className="sideBar flex flex-col gap-5 rounded-xl w-[100%] ">
         <div className="profileDiv py-3 px-7  rounded-xl   flex items-center gap-3 bg-white">
           {/* left part */}
           <div className="">

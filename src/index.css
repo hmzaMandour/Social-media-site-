@@ -34,3 +34,67 @@
 .signup-second-div{
     background: linear-gradient(176deg, rgba(215,15,249,1) 0%, rgba(255,255,255,1) 100%);
 }
+
+
+
+
+
+
+
+
+
+
+.animated-box {
+    position: relative;
+    background-color: #ea61ff7a;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+
+    overflow: hidden;
+ 
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.5s ease;
+    z-index: 1;
+
+}
+
+
+.animated-box::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 180%;
+    height: 150%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0) 70%);
+    transform: rotate(45deg);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    pointer-events: none;
+    z-index: -1; 
+}
+
+
+@keyframes light-ray-animation {
+    0% {
+        background-position: 0% 0%;
+    }
+    100% {
+        background-position: 100% 100%;
+    }
+}
+.animated-box:hover {
+    transform: scale(1.05);
+}
+
+.animated-box:hover::before {
+    opacity: 1;
+    animation: light-ray-animation 3s linear infinite;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.658) 0%, rgba(255, 255, 255, 0) 70%);
+    background-size: 200% 200%;
+}

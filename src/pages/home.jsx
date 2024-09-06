@@ -8,6 +8,9 @@ import { Navbar } from "../layouts/navBar";
 import { Creators } from "./creators/creators";
 import UserProfile from "./profile/userprofile";
 import UsersProfile from "./profile/usersprofile";
+import { Homepage } from "./home/home";
+import { Stories } from "./home/stories";
+
 
 export const Home = () => {
   return (
@@ -17,6 +20,8 @@ export const Home = () => {
 
 
         <Route path="/profile" element={<UsersProfile />}></Route>
+       <Route path="/home" element={<Homepage />} />
+       <Route path="/storie" element={<Stories />} />
         <Route path="/user" element={<UserProfile />}></Route>
         <Route path="/navbar" element={<Navbar />} />
         <Route path="/sidebar" element={<Side />} />
