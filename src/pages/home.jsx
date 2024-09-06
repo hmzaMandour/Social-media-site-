@@ -14,9 +14,6 @@ export const Home = () => {
   return (
     <>
       <Routes>
-
-
-
         <Route path="/profile" element={<UsersProfile />}></Route>
         <Route path="/user" element={<UserProfile />}></Route>
         <Route path="/navbar" element={<Navbar />} />
