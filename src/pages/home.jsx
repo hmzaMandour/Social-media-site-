@@ -11,6 +11,7 @@ import UsersProfile from "./profile/usersprofile";
 import { Homepage } from "./home/home";
 import { Stories } from "./home/stories";
 
+import { Friend } from "./friends/friends";
 
 export const Home = () => {
   return (
@@ -29,6 +30,7 @@ export const Home = () => {
         <Route path="/:id" element={<UsersProfile />}></Route>
         <Route path="/signup" element={<Signup />} />
         <Route path="/signin" element={<SignIn />} />
+        <Route path="/friend" element={<Friend />} />
         <Route path="/creators" element={<Creators />} />
       </Routes>
     </>
