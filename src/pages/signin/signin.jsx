@@ -1,4 +1,4 @@
-import React, {useContext, useState} from "react";
+import React, { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import logo from "../../assets/images/image.png";
 import images from "../../constant/images";
@@ -37,7 +37,7 @@ export const SignIn = () => {
   function notify() {
     let random = Math.ceil(Math.random() * 8999) + 1000;
     setRandomOne(random);
-    isTrue = true
+    isTrue = true;
 
     const notification = new Notification("Your code is:", {
       body: random,
@@ -120,12 +120,20 @@ export const SignIn = () => {
                 placeholder="Verify Code"
                 type="number"
               />
-              <button onClick={()=> {notification()}} className="h-[45px] text-[#b535eb]   w-[100px] rounded-[20px] text-[14px] font-semibold cursor-pointer underline">
+              <button
+                onClick={() => {
+                  notification();
+                }}
+                className="h-[45px] text-[#b535eb]   w-[100px] rounded-[20px] text-[14px] font-semibold cursor-pointer underline"
+              >
                 Send Code
               </button>
             </div>
             <div className="overflow-hidden rounded-[15px]  h-[45px] w-[200px] mt-5">
-              <button onClick={() => checkUserInfo()} className="signup-button text-white h-[100%] w-[100%] rounded-[20px] text-[13px] font-semibold cursor-pointer hover:bg-[#b535eb]">
+              <button
+                onClick={() => checkUserInfo()}
+                className="signup-button text-white h-[100%] w-[100%] rounded-[20px] text-[13px] font-semibold cursor-pointer hover:bg-[#b535eb]"
+              >
                 LOG IN
               </button>
             </div>
