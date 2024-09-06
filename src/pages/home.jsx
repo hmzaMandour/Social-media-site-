@@ -16,7 +16,7 @@ export const Home = () => {
       <Route path="/navbar" element={<Navbar />} />
       <Route path="/sidebar" element={<Side />} />
       <Route path="/" element={<AboutSocial />}></Route>
-        <Route path="/profile" element={<UsersProfile/>}></Route>
+        <Route path="/:id" element={<UsersProfile/>}></Route>
         <Route path="/user" element={<UserProfile/>}></Route>
         <Route path="/signup" element={<Signup />} />
         <Route path="/signin" element={<SignIn />} />
