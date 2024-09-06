@@ -21,28 +21,47 @@ const UsersProfile = () => {
                         <img 
                             src="" 
                             alt="" 
-                            className='bg-red-300 w-[100px] h-[100px] rounded-[50%] ' 
+                            className='bg-red-300 w-[130px] h-[130px] rounded-[50%] ' 
                         />
 
                         {/* info div */}
-                        <div>
-                            <p className='font-semibold'>
-                                Full Name
-                            </p>
-                            <p className='pb-3 text-[13px]'>
-                                3 mutual friends
-                            </p>
+                        <div className='flex  flex-col gap-[4px] '>
+                            <div className='flex items-center justify-between'>
+                                <p className='font-semibold'>
+                                    Full Name
+                                </p>
 
-                            <div className='flex gap-2'>
-                                <button 
-                                    className=' flex items-center gap-2 text-white bg-[#6e009e] py-[8px] px-7 rounded-[20px] text-[13px] font-semibold cursor-pointer hover:bg-[#b535eb]'>
-                                    <SlUserFollow/> Follow
-                                </button>
-                                <button 
-                                    className='flex items-center gap-2 m-0 text-white bg-[#6e009e] py-[8px] px-7 rounded-[20px] text-[13px] font-semibold cursor-pointer hover:bg-[#b535eb]'>
-                                    <BiMessage/> Message
-                                </button>
                             </div>
+
+
+                            <div className=' flex gap-5 '>
+                                <div className='flex flex-col  '>
+                                    <p className=' text-gray-600 text-[13px]'>Followers</p>
+                                    <p className='text-[13px] font-semibold '>1239</p>
+                                </div>
+                                <div className='flex flex-col'>
+                                    <p className=' text-gray-600 text-[13px]'>Following</p>
+                                    <p className='text-[13px] font-semibold '>129</p>
+                                </div>
+                            </div>
+
+                            
+                            {/* <p className='pb-3 text-[13px]'>
+                                3 mutual friends
+                            </p> */}
+
+                                <div className='flex gap-2 pt-2'>
+                                    <button 
+                                        className=' flex items-center gap-2 text-white bg-[#6e009e] py-[8px] px-7 rounded-[20px] text-[13px] font-semibold cursor-pointer hover:border-solid border-2 border-[#6e009e] hover:text-[#6e009e] hover:bg-transparent'>
+                                        <SlUserFollow/> Follow
+                                    </button>
+                                    <button 
+                                        className='flex items-center gap-2 m-0 text-white bg-[#6e009e] py-[8px] px-7 rounded-[20px] text-[13px] font-semibold cursor-pointer hover:border-solid border-2 border-[#6e009e] hover:text-[#6e009e] hover:bg-transparent '>
+                                        <BiMessage/> Message
+                                    </button>
+                                </div>
+
+                            
                         </div>
                     </div>
 

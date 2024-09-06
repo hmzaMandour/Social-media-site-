@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import images from "../../constant/images";
 
 import { WiDaySunny } from "react-icons/wi";
-import { CiDark } from "react-icons/ci";
+import { MdOutlineDarkMode } from "react-icons/md";
 
 export const AboutSocial = () => {
   const [darkMode, setDarkMode] = useState(false);
@@ -48,7 +48,7 @@ export const AboutSocial = () => {
                     {darkMode ? (
                       <WiDaySunny size={24} className="text-[#e040fb]" />
                     ) : (
-                      <CiDark size={24} className="text-[#e040fb]" />
+                      <MdOutlineDarkMode size={24} className="text-[#e040fb]" />
                     )}
                   </button>
                   <button onClick={() => { navigate("/signIn") }} className="login-btn text-white bg-[#6e009e] py-[8px] px-7 rounded-[20px] text-[13px] font-semibold cursor-pointer hover:bg-[#b535eb]">
