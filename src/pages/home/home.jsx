@@ -49,11 +49,11 @@ export const Homepage = () => {
 
   return (
     <>
-      <div>
+      <div className="pr-3 bg-[#f1edf2]">
         <Navbar />
-        <div className="flex bg-[#6f009e09] pb-20 pt-5 pl-10 justify-between">
+        <div className="flex  pb-20 pt-5 pl-10 justify-between">
           <Side />
-          <div>
+          <div className="w-[680px]">
             <Stories />
             <CreatePost onCreatePost={handleCreatePost} />
             {user.posts.map((post, index) => (
