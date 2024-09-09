@@ -5,15 +5,15 @@ import { CiDark } from "react-icons/ci";
 import { dataContext } from "../../App";
 
 export const Signup = () => {
-  let obj = useContext(dataContext);
+  let {user, setUser } = useContext(dataContext);
 
   const [isValidEmail, setIsValidEmail] = useState(false);
   const [isValidPass, setIsValidPass] = useState(false);
 
-
   const [isNameEmpty, setisNameEmpty] = useState(true);
   const [isEmailEmpty, setisEmailEmpty] = useState(true);
   const [isPasswordEmpty, setisPasswordEmpty] = useState(true);
+  const [isBirthdayEmpty, setIsBirthdayEmpty] = useState(true);
 
   const navigate = useNavigate();
 
@@ -34,11 +34,11 @@ export const Signup = () => {
       scndName = newName.trim();
     }
 
-    if(scndName === "") {
-      setisNameEmpty(true)
+    if (scndName === "") {
+      setisNameEmpty(true);
     }
 
-    setisNameEmpty(false)
+    setisNameEmpty(false);
     return scndName;
   }
   //^ name check end---------------
@@ -50,13 +50,14 @@ export const Signup = () => {
 
     // Basic email validation using a regular expression
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    setIsValidEmail(emailRegex.test(newEmail))
+    setIsValidEmail(emailRegex.test(newEmail));
 
-    obj.email = newEmail;
-    setisEmailEmpty(false)
+    //setUser.email = newEmail;
+    setUser({...user, email: newEmail})
+    setisEmailEmpty(false);
 
-    if(email === "") {
-      setisEmailEmpty(true)
+    if (email === "") {
+      setisEmailEmpty(true);
     }
   };
 
@@ -69,13 +70,14 @@ export const Signup = () => {
 
     // Basic email validation using a regular expression
     const passwordRegex = /^(?=.*[a-zA-Z])(?=.*\d)[^\s]{8,}$/;
-    setIsValidPass(passwordRegex.test(newPassword))
+    setIsValidPass(passwordRegex.test(newPassword));
 
-    obj.password = newPassword;
-    setisPasswordEmpty(false)
+    //setUser.password = newPassword;
+    setUser({...user, password: newPassword})
+    setisPasswordEmpty(false);
 
-    if(pass === "") {
-      setisPasswordEmpty(true)
+    if (pass === "") {
+      setisPasswordEmpty(true);
     }
   };
 
@@ -110,7 +112,8 @@ export const Signup = () => {
             <div>
               <input
                 onChange={(e) => {
-                  obj.name = nameFormating(e.target.value);
+                  //setUser.name = nameFormating(e.target.value);
+                  setUser({...user, name:  nameFormating(e.target.value)})
                 }}
                 className="h-[45px] shadow-border w-[300px] rounded-[15px] px-5 shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)] "
                 placeholder="FullName"
@@ -120,27 +123,42 @@ export const Signup = () => {
             <div>
               <input
                 id="email"
-                onChange={(e) => handleEmailChange(e.target.value)}
+                onChange={(e) => {
+                  //handleEmailChange(e.target.value)
+                  handleEmailChange(e.target.value)
+                }}
                 className="h-[45px] shadow-border w-[300px] rounded-[15px] px-5 shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)]"
                 placeholder="E-mail"
                 type="email"
-                
               />
-              {isValidEmail ? <p className="ps-5 text-green-500">Email is valid</p> : <p className="ps-5 text-red-500">Email is invalid</p>}
-            </div>
-            <div>
-              <input
-                onChange={(e) => handlePasswordChange(e.target.value)}
-                className="h-[45px] shadow-border w-[300px] rounded-[15px] px-5 shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)]"
-                placeholder="Password"
-                type="password"
-              />
-              {isValidPass ? <p className="ps-5 text-green-500">Password is valid</p> : <p className="ps-5 text-red-500">Password is invalid</p>}
+              {isValidEmail ? (
+                <p className="ps-5 text-green-500">Email is valid</p>
+              ) : (
+                <p className="ps-5 text-red-500">Email is invalid</p>
+              )}
             </div>
             <div>
               <input
                 onChange={(e) => {
-                  obj.birthday = e.target.value;
+                  //handlePasswordChange(e.target.value)
+                  handlePasswordChange(e.target.value)
+                }}
+                className="h-[45px] shadow-border w-[300px] rounded-[15px] px-5 shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)]"
+                placeholder="Password"
+                type="password"
+              />
+              {isValidPass ? (
+                <p className="ps-5 text-green-500">Password is valid</p>
+              ) : (
+                <p className="ps-5 text-red-500">Password is invalid</p>
+              )}
+            </div>
+            <div>
+              <input
+                onChange={(e) => {
+                  setIsBirthdayEmpty(false)
+                  //setUser.birthday = e.target.value;
+                  setUser({...user, birthday:  e.target.value})
                 }}
                 className="h-[45px] text-[#9ca3af] pl-[15px] shadow-border w-[300px] rounded-[15px] px-5 shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)]"
                 placeholder="Date"
@@ -151,7 +169,8 @@ export const Signup = () => {
               <select
                 className="px-4 h-[45px] shadow-border w-[300px] rounded-[15px] bg-white flex justify-center items-center text-[#9ca3af] gap-[130px] shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)]"
                 onClick={(e) => {
-                  obj.gender = e.target.select;
+                  //setUser.gender = e.target.select;
+                  setUser({...user, gender:  e.target.value})
                 }}
                 name=""
               >
@@ -162,10 +181,25 @@ export const Signup = () => {
             <div className="overflow-hidden rounded-[15px]  h-[45px] w-[200px]">
               <button
                 onClick={() => {
-                  if (isNameEmpty !== true && isEmailEmpty !== true && isPasswordEmpty !== true) {
+                  if (
+                    isNameEmpty !== true &&
+                    isEmailEmpty !== true &&
+                    isPasswordEmpty !== true &&
+                    isBirthdayEmpty !== true &&
+                    isValidEmail === true &&
+                    isValidPass === true
+                  ) {
+                    console.log(user);
+                    
                     navigate("/signIn");
                   } else {
-                    alert("Fill all Fields")
+                    if (isValidEmail !== true) {
+                      alert("Enter a valid Email");
+                    } else if (isValidPass !== true) {
+                      alert("Enter a valid Password");
+                    } else {
+                      alert("Fill all Fields");
+                    }
                   }
                 }}
                 className="signup-button  h-[100%] w-[100%] rounded-[20px]  text-white   text-[14px] font-semibold cursor-pointer hover:bg-[#b535eb]"

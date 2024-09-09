@@ -4,6 +4,7 @@ import logo from "../../assets/images/image.png";
 import images from "../../constant/images";
 import { CiDark } from "react-icons/ci";
 import { dataContext } from "../../App";
+import { friendsArr } from "../home";
 
 export const SignIn = () => {
   const navigate = useNavigate();
@@ -13,22 +14,26 @@ export const SignIn = () => {
   const [randomOne, setRandomOne] = useState(0);
   const [random, setRandom] = useState(0);
 
-  let obj = useContext(dataContext);
-
+  let { user, setUser } = useContext(dataContext);
+  let arr = useContext(friendsArr);
   let isTrue = false;
 
   const checkUserInfo = () => {
     if (
-      obj.email === email &&
-      obj.password === password &&
+      user.email === email &&
+      user.password === password &&
       Number(randomOne) === Number(random) &&
       random !== 0
     ) {
       // isTrue = true;
-      // navigate("/home")
-      alert("seems good " + random + randomOne);
+      arr.push(user);
+      console.log(user);
+      console.log(arr);
+      navigate("/home");
+
+      alert("Loged In Successfully");
     } else {
-      alert("somthing is wrong " + random + " " + randomOne);
+      alert("somthing is wrong ");
       // isTrue = false;
     }
   };
