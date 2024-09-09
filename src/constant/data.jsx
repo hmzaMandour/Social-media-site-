@@ -1,3 +1,3 @@
-
-export * as people from "../json/people.json"
+import product from "../json/data.json"
+export {product}
 
