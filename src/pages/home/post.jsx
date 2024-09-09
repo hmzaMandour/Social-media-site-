@@ -5,14 +5,14 @@ import { MdDone } from 'react-icons/md';
 import { dataContext } from '../../App';
 
 export const Post = ({ post, index, onLike, onOpenModal, commentsCount, isModalOpen, closeModal, handleComment, inputChange, setInputChange, comments }) => {
-  const obj = useContext(dataContext);
+  let {user, setUser} = useContext(dataContext);
 
   return (
     <div className="bg-white shadow-lg rounded-lg p-4 mb-6 max-w-md mx-auto">
       <div className="flex items-center justify-between mb-4">
         <div className="flex items-center">
-          <img src={obj.img || images.defaultProfile} alt="" className="w-12 h-12 bg-black rounded-full mr-4" />
-          <h3 className="font-semibold text-lg">{obj.name || 'User'}</h3>
+          <img src={user.img || images.defaultProfile} alt="" className="w-12 h-12 bg-black rounded-full mr-4" />
+          <h3 className="font-semibold text-lg">{user.name || 'User'}</h3>
         </div>
         <small className="text-gray-500">{post.date || ''}</small>
       </div>
