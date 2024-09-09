@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 
 import { useNavigate } from "react-router-dom";
 import { CgProfile } from "react-icons/cg";
@@ -8,10 +8,16 @@ import { MdLogout, MdAdminPanelSettings, MdDarkMode } from "react-icons/md";
 import { MdOutlineDarkMode } from "react-icons/md";
 import { MdNotificationsNone } from "react-icons/md";
 
+import images from "../constant/images";
+
+import { IoSearch } from "react-icons/io5";
+import { dataContext } from "../App";
 
 
 
 export const Navbar = () => {
+  let obj = useContext(dataContext); 
+  let navigate = useNavigate()
     const [modal, setModal] = useState(false);
     const mymodal = () => {
         setTimeout(() => {
@@ -24,11 +30,22 @@ export const Navbar = () => {
     return (
         <>
         <div>
-            <nav className='flex gap-[1100px] px-10 m-0 items-center  h-[13vh]'>
+            <nav className='flex justify-between px-10 m-0 items-center  h-[13vh] '>
             <div className="logo m-0">
                 <p className="font-bold m-0 text-[28px] cursor-pointer text-[#6e009e]">
-                    FRIDAT<span className="text-[#e040fb] text-3xl">.</span>
+                   <img className="w-32" src={images.fridat} alt="" />
                 </p>
+            </div>
+
+            <div>
+                <div className="relative">
+                  <IoSearch className="absolute left-3 top-1/2 transform -translate-y-1/2 text-[#e040fb] " />
+                  <input
+                    type="text"
+                    placeholder="Search..."
+                    className="pl-10 pr-4 py-2 border rounded-full w-[35vw] focus:outline-none "
+                  />
+                </div>
             </div>
 
             <div  className='flex  items-center gap-5'>
@@ -37,18 +54,20 @@ export const Navbar = () => {
                 
                 <img  
                 onClick={mymodal}
-                    src="" 
+                    src={obj.img} 
                     alt="" 
-                    className='w-10 h-10 bg-red-200 rounded-[50%] cursor-pointer' 
+                    className='w-10 h-10 bg-black rounded-[50%] cursor-pointer' 
                     
                 />
-                {
+                 {
         modal && (
           <div className="flex justify-center items-center absolute top-[70px] right-[58px] flex-col">
-            <div className="epsi bg-white"></div>
-            <div className="bg-white opsi h-[400px] w-[250px] rounded-[20px] flex justify-center items-center flex-col gap-2">
-              <div className="h-[60px] w-[60px] bg-red-500 rounded-full"></div>
-              <div className="h-[60px] w-[80%]  hover:bg-[#e040fb] rounded-[20px] flex justify-center items-center gap-[85px]">
+            <div className="epsi bg-black"></div>
+            <div className="bg-black z-30 opsi h-[400px] w-[250px] rounded-[20px] flex justify-center items-center flex-col gap-2">
+              <div className="h-[60px] w-[60px] bg-red-500 rounded-full">
+              <img src={obj.img} alt="" className="h-[60px] w-[60px] bg-black rounded-full mr-4" />
+              </div>
+              <div onClick={() => { navigate("/userpage") }} className="h-[60px] w-[80%]  hover:bg-[#e040fb] rounded-[20px] flex justify-center items-center gap-[85px]">
                 <div className="text-2xl text-[#e7e9ec] p-2 rounded-full bg-[#6e009e]"><CgProfile /></div>
                 <div className="text-[#e2e4e8]">Profile</div>
               </div>
@@ -56,18 +75,18 @@ export const Navbar = () => {
                 <div className="text-2xl text-[#e7e9ec] p-2 rounded-full bg-[#6e009e]"><MdDarkMode /></div>
                 <div className="text-[#e2e4e8]">DarkMode</div>
               </div>
-              <div className="h-[60px] w-[80%] bg-[#] hover:bg-[#e040fb] rounded-[20px] flex justify-center items-center gap-[70px]">
+              <div onClick={() => { navigate("/settings") }} className="h-[60px] w-[80%] bg-[#] hover:bg-[#e040fb] rounded-[20px] flex justify-center items-center gap-[70px]">
                 <div className="text-2xl text-[#e7e9ec] p-2 rounded-full bg-[#6e009e]"><MdAdminPanelSettings /></div>
                 <div className="text-[#e2e4e8]">Settings</div>
               </div>
-              <div className="h-[60px] w-[80%] bg-[#] hover:bg-[#e040fb] rounded-[20px] flex justify-center items-center gap-[70px]">
+              <div onClick={() => { navigate("/") }} className="h-[60px] w-[80%] bg-[#] hover:bg-[#e040fb] rounded-[20px] flex justify-center items-center gap-[70px]">
                 <div className="text-2xl text-[#e7e9ec] p-2 rounded-full bg-[#6e009e]"><MdLogout /></div>
-                <div className="text-[#e2e4e8]">LogOut</div>
+                <div  className="text-[#e2e4e8]">LogOut</div>
               </div>
             </div>
           </div>
         )
-      }
+      } 
             </div>
             
 
@@ -76,20 +95,6 @@ export const Navbar = () => {
 
         
         </>
-        // <div>
-        //     <nav className="flex bg-white justify-center h-[100px] items-center gap-[1200px]">
-        //         <h1 className="text-5xl">Fri<span className="text-[#e040fb]">Dat</span></h1>
-                
-        //         <div className="h-[50px] w-[50px] bg-green-600 rounded-full">
-        //             <div></div>
-        //             <div className="h-[20px] w-[20px] flex justify-center items-center mt-[30px] ml-[30px] rounded-full bg-white"><IoIosArrowDown /> </div>
-
-        //         </div>
-
-        //     </nav>
-
-        // </div>
+ 
     );
 };
-
-

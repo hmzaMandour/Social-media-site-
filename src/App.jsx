@@ -2,10 +2,10 @@ import { createContext } from "react";
 import "./index.css";
 import { Home } from "./pages/home";
 
-export const dataContext = createContext(null);
+export const dataContext = createContext();
 
 function App() {
-
+ 
   let obj = {
     name: "",
     email: "",
@@ -13,7 +13,7 @@ function App() {
     birthday: "",
     gender: "",
     img: "",
-    posts: [{}],
+    posts: [],
   };
 
   return (

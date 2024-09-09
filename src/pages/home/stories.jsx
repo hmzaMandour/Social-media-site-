@@ -1,13 +1,16 @@
 
 
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { MdOutlineAddAPhoto } from "react-icons/md";
+import { dataContext } from '../../App';
 
 
 export const Stories = ()=> {
   const [files, setFiles] = useState([]);
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [currentMedia, setCurrentMedia] = useState({ url: '', type: '' });
+
+  let obj = useContext(dataContext); 
 
   const handleFileChange = (event) => {
     const uploadedFiles = Array.from(event.target.files);
@@ -31,18 +34,18 @@ export const Stories = ()=> {
   const renderFilePreview = (file) => {
     const fileURL = URL.createObjectURL(file);
     if (file.type.startsWith('image/')) {
-      return <img src={fileURL} alt={file.name} className="filter brightness-75 rounded-[25px] bg-cover object-cover w-[120px] h-[180px]" />;
+      return <img src={fileURL} alt={file.name} className="filter brightness-75 rounded-[25px] bg-cover object-cover w-[90px] h-[150px]" />;
     } else if (file.type.startsWith('video/')) {
-      return <video src={fileURL} autoPlay loop muted className="filter brightness-75 rounded-[25px] bg-cover object-cover w-[120px] h-[180px]" />;
+      return <video src={fileURL} autoPlay loop muted className="filter brightness-75 rounded-[25px] bg-cover object-cover w-[90px] h-[150px]" />;
     } else {
       return <p>Unsupported file type</p>;
     }
   };
   return (
     <>
-        <div className="flex p-4">
-      <div className="rounded-[25px] bg-cover object-cover w-[120px] h-[180px] bg-[#6e009e] m-[10px] hover:bg-[#933bb9] animated-box">
-        <label htmlFor="file-upload" className="flex items-center justify-center gap-3 rounded-[25px] cursor-pointer ml-[50px] mx-[40px] my-[13px] w-[100%] h-[200px]">
+        <div className="flex p-4 items-start">
+      <div className="rounded-[25px] bg-cover object-cover w-[90px] h-[150px] bg-[#6e009e] m-[10px] hover:bg-[#933bb9] animated-box">
+        <label htmlFor="file-upload" className="flex items-center justify-center gap-3 rounded-[25px] cursor-pointer ml-[30px] mx-[30px] my-[19px] w-[100%] h-[200px]">
           <MdOutlineAddAPhoto size={40} className="text-[#ffff]" />
           <input
             type="file"
@@ -59,7 +62,11 @@ export const Stories = ()=> {
         {files.length > 0 ? (
           files.map((file, index) => (
             <div key={index} className="relative" style={{ margin: '10px' }}>
-              <div className="h-[40px] border-2 border-[#e040f] mt-[9px] ml-[9px] w-[40px] bg-[#ce2f96] rounded-full z-30 absolute"></div>
+              <div className="h-[40px]  mt-[9px] ml-[9px] w-[40px] bg-[#ce2f96] rounded-full z-30 absolute">
+              <div>
+                <img src={obj.img} alt="" className="w-10 h-10 border-2 border-[#e040f] object-center bg-black rounded-full mr-4" />
+                </div>
+              </div>
               <div onClick={() => openModal1(file)} className="cursor-pointer">
                 {renderFilePreview(file)}
               </div>

@@ -1,0 +1,111 @@
+[
+    {
+        "product1":"image1",
+        "id":"1",
+        "price":"$20.304",
+        "title":"iMac Apple M1 chip",
+        "rate":"4.9",
+         "sold":"32 Sold"
+        
+    },
+    {
+        "product1":"image2",
+        "id":"2",
+        "price":"$80",
+        "title":"Apple watch series 7",
+         "rate":"5.2",
+          "sold":"18 Sold"
+
+        
+    },
+    {
+        "product1":"image3",
+        "id":"3",
+        "price":"$40.15",
+        "title":"Koniga Camera",
+         "rate":"4.5",
+          "sold":"32 Sold"
+    
+    },
+    {
+        "product1":"image4",
+        "id":"4",
+        "price":"$24",
+        "title":"Fujifilm Camera ",
+         "rate":"4.2",
+          "sold":"15 Sold"
+       
+    },
+    {
+        "product1":"image5",
+        "id":"5",
+        "price":"$20.",
+        "title":"Smart watch",
+         "rate":"5.2",
+          "sold":"5 Sold"
+       
+    },
+    {
+        "product1":"image6",
+        "id":"6",
+        "price":"$60",
+        "title":"Playstation 5",
+         "rate":"4.9",
+          "sold":"10 Sold"
+       
+    },
+    {
+        "product1":"image7",
+        "price":"$78",
+        "id":"7",
+        "title":"Vitamin C Boost Mask",
+        "rate":"4.9",
+        "sold":"32 Sold"
+     
+    },
+    {
+        "product1":"image8",
+        "id":"8",
+        "price":"$56",
+        "title":"Nike",
+         "rate":"5.9",
+         "sold":"32 Sold"
+      
+    }, {
+        "product1":"image9",
+        "id":"9",
+        "price":"$10",
+        "title":"Hair Mask",
+         "rate":"5",
+         "sold":"4 Sold"
+       
+    },
+    {
+        "product1":"image10",
+        "id":"10",
+        "price":"$18",
+        "title":"Body Oil",
+         "rate":"4.9",
+         "sold":"121 Sold"
+       
+    },
+    {
+        "product1":"image11",
+        "id":"11",
+        "price":"$32",
+        "title":"Microphone",
+         "rate":"5.2",
+         "sold":"8 Sold"
+      
+    },
+    {
+        "product1":"image12",
+        "id":"12",
+        "price":"$25",
+        "title":"Parfum",
+        "rate":"5",
+        "sold":"12 Sold"
+       
+    }
+    
+]

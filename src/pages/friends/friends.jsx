@@ -40,12 +40,12 @@ export const Friend =() =>{
 
   return (
 
-      <div className="w-[240px] snapa overflow-x-auto flex gap-2">
+      <div className="w-[20vw] rounded-2xl snapa bg-white overflow-x-auto flex gap-2">
         {
           valuesArray.map(([key, e], index) => {
             const isFollowing = iconStates[index] || false;
             return (
-              <div key={key} className='ml-2 shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)] mt-[100px] justify-center items-center  inline-block rounded-lg px-3  py-5'>
+              <div key={key} className='ml-2 w-[100%] shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)] mt-[100px]   inline-block rounded-lg px-3  '>
                 <div className='flex justify-end '>
                   <button onClick={() => toggleIcon(index)} className='cursor-pointer'>
                     {isFollowing ? (

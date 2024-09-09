@@ -40,7 +40,7 @@ export const AboutSocial = () => {
               <nav className="flex justify-between pt-5 m-0 items-center">
                 <div className="logo m-0">
                   <p className="font-bold m-0 text-[28px] cursor-pointer text-[#6e009e]">
-                    <span className={darkMode ? " text-white  h-screen" : " text-[#6e009e]"}>FRIDAT</span><span className="text-[#e040fb] text-3xl">.</span>
+                  <img className="w-32" src={images.fridat} alt="" />
                   </p>
                 </div>
                 <div className="buttons flex gap-2">

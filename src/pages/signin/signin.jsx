@@ -129,8 +129,11 @@ export const SignIn = () => {
                 Send Code
               </button>
             </div>
-            <div className="overflow-hidden rounded-[15px]  h-[45px] w-[200px] mt-5">
+            <div   onClick={() => {
+                    navigate("/Photo");
+                  }} className="overflow-hidden rounded-[15px]  h-[45px] w-[200px] mt-5">
               <button
+                
                 onClick={() => checkUserInfo()}
                 className="signup-button text-white h-[100%] w-[100%] rounded-[20px] text-[13px] font-semibold cursor-pointer hover:bg-[#b535eb]"
               >
