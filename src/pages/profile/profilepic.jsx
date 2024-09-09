@@ -5,8 +5,8 @@ import { useNavigate } from 'react-router-dom';
 import { dataContext } from '../../App';
 
 export function Photo() {
-    let obj = useContext(dataContext); 
-    console.log(obj);
+    let {user, setUser} = useContext(dataContext); 
+    console.log(user);
     
     const navigate = useNavigate();
   const [backgroundImage1, setBackgroundImage1] = useState(null);
@@ -26,7 +26,7 @@ export function Photo() {
     if (e.target.files[0]) {
       const fileURL = URL.createObjectURL(e.target.files[0]);
       setBackgroundImage2(fileURL);
-      obj.img = fileURL
+      user.img = fileURL
     }
   };
 
@@ -71,14 +71,14 @@ export function Photo() {
               <div
                 className="w-[100%] rd2 rounded-full h-[100%]"
                 style={{
-                    backgroundImage: `url(${backgroundImage2 || obj.img})`,
+                    backgroundImage: `url(${backgroundImage2 || user.img})`,
                     backgroundSize: 'cover',
                     backgroundPosition: 'center',
                   }}
               ></div>
             </div>
           </div>
-          <div className='font-medium text-2xl pl-[400px] pt-[30px]'>{obj.name}</div>
+          <div className='font-medium text-2xl pl-[400px] pt-[30px]'>{user.name}</div>
           <div className='h-[250px] w-[500px] pt-[30px] ml-[40vw] flex flex-col gap-[20px]'>
             <div className='font-medium text-2xl'>Bio :</div>
             <div className='flex items-center'>

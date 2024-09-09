@@ -12,7 +12,7 @@ function App() {
     birthday: "",
     gender: "",
     img: "",
-    posts: [{ postDesc: "", postImgs: [] }],
+    posts: [],
   });
 
   return (
