@@ -17,6 +17,8 @@ import { UserPage } from "./profile/userpage";
 import { Settings } from "./settings/settings";
 import { Photo } from "./profile/profilepic";
 import { People } from "./people/people";
+import Group from "./Groups/groups";
+import Marketplace from "./marketplace/marketplace";
 
 export const friendsArr = createContext(null);
 
@@ -28,6 +30,8 @@ export const Home = () => {
       <friendsArr.Provider value={friends}>
         <Routes>
           <Route path="/profile" element={<UsersProfile />}></Route>
+          <Route path="/market" element={< Marketplace />} />
+          <Route path="/group" element={<Group />} />
           <Route path="/people" element={<People />} />
           <Route path="/userpage" element={<UserPage />} />
           <Route path="/photo" element={<Photo />} />

@@ -1,11 +1,12 @@
-import { createContext, useState } from "react";
+import { createContext } from "react";
 import "./index.css";
 import { Home } from "./pages/home";
 
 export const dataContext = createContext();
 
 function App() {
-  const [user, setUser] = useState({
+ 
+  let obj = {
     name: "",
     email: "",
     password: "",
@@ -13,11 +14,11 @@ function App() {
     gender: "",
     img: "",
     posts: [],
-  });
+  };
 
   return (
     <>
-      <dataContext.Provider value={{ user, setUser }}>
+      <dataContext.Provider value={obj}>
         <Home />
       </dataContext.Provider>
     </>
