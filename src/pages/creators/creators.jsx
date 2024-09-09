@@ -11,16 +11,16 @@ export const Creators = () => {
         <>
         
 
-        <div className='h-[450px] w-[25vw] rounded-[20px] overflow-hidden bg-white  '>
+        <div className='h-[450px] w-[25vw] rounded-[20px] overflow-y-scroll bg-white  '>
             <h1 className='text-[15px] font-semibold  py-5 px-6'>Content Creators:</h1>
-            <div onChange={(e) => setSearch(e.target.value)} className='w-[100%] flex justify-center items-center'>
-                <input placeholder='Search' className='h-[45px] w-[250px] rounded-full pl-3 border-[1px]' type="search" />
+            <div onChange={(e) => setSearch(e.target.value)} className='w-[100%] flex justify-center items-center sticky top-4 z-10'>
+                <input placeholder='Search' className='h-[45px] w-[250px] rounded-full pl-3 border-[1px] ' type="search" />
             </div>
             {
                 CreatorsData.creators.filter((item) => {
                     return search.toLowerCase() === '' ? item : item.name.toLowerCase().includes(search.toLowerCase());
                 }).map((e,i) => (
-                    <div onClick={() => navigate(`/${i}`)} key={e.id} className='flex justify-center items-center flex-col gap-[12px] mt-2'>
+                    <div onClick={() => navigate(`/${i}`)} key={e.id} className='flex justify-center items-center flex-col gap-[12px] mt-5'>
                         <div className='h-[60px] w-[95%] rounded-[10px] flex items-center'>
                             <div className='h-[45px] relative w-[45px] ml-5 rounded-full flex items-center justify-center'>
                                 <img src={e.image} alt="" className='h-[45px] w-[45px] rounded-full object-cover' />
