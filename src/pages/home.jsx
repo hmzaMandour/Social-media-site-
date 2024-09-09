@@ -8,15 +8,16 @@ import { Navbar } from "../layouts/navBar";
 import { Creators } from "./creators/creators";
 import { UserProfile } from "./profile/userprofile";
 import UsersProfile from "./profile/usersprofile";
-import { Homepage } from "./home/home";
+import {  Post } from "./home/post";
 import { Stories } from "./home/stories";
 import { Friend } from "./friends/friends";
 import { CreatePost } from "./home/createposts";
-import { Post } from "./home/post";
+
 import { UserPage } from "./profile/userpage";
 import { Settings } from "./settings/settings";
 import { Photo } from "./profile/profilepic";
 import { People } from "./people/people";
+import { Homepage } from "./home/home";
 
 export const friendsArr = createContext(null);
 

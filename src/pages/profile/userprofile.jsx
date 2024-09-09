@@ -9,6 +9,7 @@ import { GoLocation } from "react-icons/go";
 import { HiMiniDevicePhoneMobile } from "react-icons/hi2";
 import { dataContext } from "../../App";
 import { CreatePost } from "../home/createposts";
+import {  Post } from "../../pages/home/post"
 
 export const UserProfile = () => {
   let { user, setUser } = useContext(dataContext);
@@ -67,9 +68,7 @@ export const UserProfile = () => {
                       <p>
                         <HiOutlineMail className="text-[#e040fb]" />
                       </p>
-                      <p className="font-semibold text-[14px] ">
-                        {user.email}
-                      </p>
+                      <p className="font-semibold text-[14px] ">{user.email}</p>
                     </div>
                     <div className="flex items-center gap-3">
                       <p>
@@ -104,7 +103,7 @@ export const UserProfile = () => {
 
               {/* right part */}
               <div>
-                <CreatePost />
+                <Post />
 
                 {/* posts div */}
                 <div className=" flex justify-between rounded-md border-solid border-[1px] border-gray-400 p-3 w-[100%]"></div>

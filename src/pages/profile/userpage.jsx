@@ -3,11 +3,11 @@ import { Navbar } from "../../layouts/navBar";
 import { Side } from "../sidebar/sidebar";
 import { UserProfile } from "./userprofile";
 import { dataContext } from "../../App";
-import { Post } from "../home/post";
+import { Post } from "../home/home";
 
 export const UserPage = () => {
-  let {user, setUser} = useContext(dataContext);
-  
+  let { user, setUser } = useContext(dataContext);
+
   return (
     <>
       <div>
