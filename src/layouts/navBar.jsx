@@ -46,7 +46,13 @@ export const Navbar = () => {
             </div>
           </div>
 
-          <div className="flex  items-center gap-5">
+          <div className="flex  items-center gap-[30px]">
+          <img
+              onClick={mymodal}
+              src={user.img}
+              alt=""
+              className="w-10 h-10 bg-black rounded-[50%] cursor-pointer"
+            />
             <MdOutlineDarkMode
               size={24}
               className="text-[#e040fb] cursor-pointer"
@@ -56,16 +62,11 @@ export const Navbar = () => {
               className="text-[#e040fb] cursor-pointer"
             />
 
-            <img
-              onClick={mymodal}
-              src={user.img}
-              alt=""
-              className="w-10 h-10 bg-black rounded-[50%] cursor-pointer"
-            />
+            
             {modal && (
-              <div className="flex justify-center items-center absolute top-[70px] right-[58px] flex-col">
-                <div className="epsi bg-black"></div>
-                <div className="bg-black z-30 opsi h-[400px] w-[250px] rounded-[20px] flex justify-center items-center flex-col gap-2">
+              <div className="flex justify-center items-center absolute top-[70px] right-[45px] flex-col">
+                <div className="epsi bg-[#f268e0]"></div>
+                <div className="bg-[#f268e0] z-30 opsi h-[400px] w-[250px] rounded-[20px] flex justify-center items-center flex-col gap-2">
                   <div className="h-[60px] w-[60px] bg-red-500 rounded-full">
                     <img
                       src={user.img}

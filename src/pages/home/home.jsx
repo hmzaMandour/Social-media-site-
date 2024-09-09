@@ -1,81 +1,29 @@
-import React, { useContext, useState } from "react";
+import React from "react";
 import { Navbar } from "../../layouts/navBar";
 import { Side } from "../sidebar/sidebar";
 import { Stories } from "./stories";
-import { CreatePost } from "./createposts";
-import { Post } from "./post";
+
+import {  Post } from "./post"
 import { Creators } from "../creators/creators";
-import { Friend } from "../friends/friends";
-import { dataContext } from "../../App";
 
 export const Homepage = () => {
-  let { user, setUser } = useContext(dataContext);
-
-  const [posts, setPosts] = useState([]);
-  const [inputChange, setInputChange] = useState("");
-  const [comments, setComments] = useState([]);
-  const [isModalOpen, setIsModalOpen] = useState(false);
-
-  const handleCreatePost = (newPost) => {
-    setPosts([...posts, newPost]);
-  };
-
-  const handleLike = (index) => {
-    const updatedPosts = [...posts];
-    const post = updatedPosts[index];
-    post.likes += post.isLiked ? -1 : 1;
-    post.isLiked = !post.isLiked;
-    setPosts(updatedPosts);
-  };
-
-  const openModal = () => {
-    setIsModalOpen(true);
-  };
-
-  const closeModal = () => {
-    setIsModalOpen(false);
-  };
-
-  const handleComment = (e) => {
-    e.preventDefault();
-    const newTab = [...comments];
-    let newTask = {
-      name: inputChange,
-    };
-    newTab.push(newTask);
-    setComments(newTab);
-    setInputChange("");
-  };
-
   return (
     <>
-      <div className="pr-3 bg-[#f1edf2]">
-        <Navbar />
-        <div className="flex  pb-20 pt-5 pl-10 justify-between">
+      <div className="bg-white"><Navbar /></div>
+      <div className="flex justify-around pt-[25px]">
+        <div>
           <Side />
-          <div className="w-[680px]">
+        </div>
+        <div>
+          <div>
             <Stories />
-            <CreatePost onCreatePost={handleCreatePost} />
-            {user.posts.map((post, index) => (
-              <Post
-                key={index}
-                post={post}
-                index={index}
-                onLike={handleLike}
-                onOpenModal={openModal}
-                commentsCount={comments.length}
-                isModalOpen={isModalOpen}
-                closeModal={closeModal}
-                handleComment={handleComment}
-                inputChange={inputChange}
-                setInputChange={setInputChange}
-                comments={comments}
-              />
-            ))}
           </div>
-          <div className="flex flex-col">
-            <Creators />
+          <div>
+            <Post />
           </div>
+        </div>
+        <div>
+          <Creators/>
         </div>
       </div>
     </>
