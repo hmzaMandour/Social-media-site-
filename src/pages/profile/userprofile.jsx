@@ -42,8 +42,8 @@ export const UserProfile = () => {
                 </div>
                 <div className="flex flex-col">
                   <p className=" text-gray-600 text-[13px]">Posts</p>
-                  <p className="text-[13px] font-semibold ">
-                    {user.posts.lenght}
+                  <p className="text-[13px] font-semibold text-center ">
+                    {user.posts.length}
                   </p>
                 </div>
               </div>
@@ -105,10 +105,10 @@ export const UserProfile = () => {
 
               {/* right part */}
               <div>
-                <Post />
+                
 
                 {/* posts div */}
-                <div className=" flex justify-between rounded-md border-solid border-[1px] border-gray-400 p-3 w-[100%]"></div>
+                <div className=" flex justify-between rounded-md border-solid border-[1px] border-gray-400 p-3 w-[100%]"><Post /></div>
               </div>
             </div>
           </div>

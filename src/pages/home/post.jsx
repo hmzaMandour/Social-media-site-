@@ -28,14 +28,17 @@ export const Post = () => {
 
   const handleComment = (e) => {
     e.preventDefault();
+    if (!inputChange.trim() ) {
+      return;
+    }
     const updatedPosts = [...user.posts];
     updatedPosts[indexofposts].comments.push({ name: inputChange });
-
+    
     setUser((user) => ({
       ...user,
       posts: updatedPosts,
     }));
-    setInputChange("");
+    setInputChange('');
   };
 
   const openModal = (index) => {
@@ -70,21 +73,25 @@ export const Post = () => {
   const handleCreatePost = (e) => {
     e.preventDefault();
 
+    if (!postText.trim() && postImage.length === 0) {
+      return;
+    }
+
     let newTask = {
       date: getCurrentTime(),
       text: postText,
       image: postImage,
       likes: 0,
       isLiked: false,
-      comments: [],
+      comments: []
     };
 
     setUser((user) => ({
       ...user,
-      posts: [...user.posts, newTask],
+      posts: [...user.posts, newTask]
     }));
 
-    setPostText("");
+    setPostText('');
     setPostImage([]);
   };
 
@@ -159,7 +166,7 @@ export const Post = () => {
                 <img
                   src={user.img || userPng}
                   alt=""
-                  className="w-12 h-12 rounded-full mr-4"
+                  className="w-10 h-10 rounded-full "
                 />
                 <input
                   type="text"
@@ -210,7 +217,7 @@ export const Post = () => {
             {user.posts.map((post, index) => (
               <div
                 key={index}
-                className="bg-white shadow-lg w-[600px] rounded-lg p-4 mb-6 mx-auto"
+                className="bg-white shadow-lg w-[500px] rounded-lg p-4 mb-6 mx-auto"
               >
                 <div className="flex items-center justify-between mb-4">
                   <div className="flex items-center">
@@ -230,7 +237,7 @@ export const Post = () => {
                   </div>
                 )}
                 <div className="flex gap-4 mb-4">
-                  <div className="flex items-center">
+                  <div className="flex items-center pt-3">
                     <button
                       className="flex items-center justify-center gap-2"
                       onClick={() => handleLike(index)}
@@ -243,7 +250,7 @@ export const Post = () => {
                       <span>{post.likes}</span>
                     </button>
                   </div>
-                  <div className="flex items-center">
+                  <div className="flex items-center pt-3">
                     <FaComment
                       onClick={() => openModal(index)}
                       className="text-gray-700 cursor-pointer text-xl transition transform hover:scale-110"
