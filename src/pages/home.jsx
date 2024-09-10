@@ -32,7 +32,7 @@ export const Home = () => {
       <friendsArr.Provider value={friends}>
         <Routes>
           <Route path="/profile" element={<UsersProfile />}></Route>
-          <Route path="/peopleprofile" element={<PeoplesProfile />}></Route>
+          <Route path="/people/:id" element={<PeoplesProfile />}></Route>
           <Route path="/market" element={< Marketplace />} />
           <Route path="/group" element={<Group />} />
           <Route path="/people" element={<People />} />

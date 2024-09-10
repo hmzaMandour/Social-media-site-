@@ -51,7 +51,7 @@ export const People = () => {
                       </button>
                     </div>
                     <div className='flex flex-col justify-center items-center px-10 pt-2 '>
-                      <div onClick={() => navigate(`/${i}`)} className=''>
+                      <div onClick={() => navigate(`/people/${i}`)} className=''>
                         <img
                           src={e.image}
                           alt=""
