@@ -30,7 +30,7 @@ export const Navbar = () => {
   return (
     <>
       <div>
-        <nav className="flex justify-between px-10 m-0 items-center  h-[13vh] ">
+        <nav className="flex justify-between px-10 m-0 items-center  h-[13vh] bg-white">
           <div className="logo m-0">
             <p className="font-bold m-0 text-[28px] cursor-pointer text-[#6e009e]">
               <img className="w-32" src={images.fridat} alt="" />

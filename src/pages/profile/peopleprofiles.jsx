@@ -5,6 +5,8 @@ import { GoLocation } from 'react-icons/go';
 import { useParams } from 'react-router-dom';
 import { PeoplesData } from '../../constant';
 import { MdDone } from 'react-icons/md';
+import { Navbar } from '../../layouts/navBar';
+import { Side } from '../sidebar/sidebar';
 
 const PeoplesProfile = () => {
     const [iconStates, setIconStates] = useState({});
@@ -25,8 +27,16 @@ const PeoplesProfile = () => {
     }
 
     return (
-        <div className='p-10'>
-            <div className='shadow-[0_3px_10px_rgb(0,0,0,0.2)] rounded-2xl p-5'>
+        <>
+        <div>
+            <Navbar/>
+            <div className='flex pt-5 pl-10'>
+                <div>
+                    <Side/>
+                </div>
+                <div>
+                    <div className='p-10'>
+            <div className='shadow-[0_3px_10px_rgb(0,0,0,0.2)] rounded-2xl p-5 bg-white'>
                 {/* top part */}
                 <div className='userPic flex items-center gap-5 border-b-[1px] border-gray-400 pb-10 pt-5 px-10'>
                     <img 
@@ -40,14 +50,14 @@ const PeoplesProfile = () => {
                         <p className='font-semibold'>
                             {ppl.name}
                         </p>
-                        <div className='flex gap-5'>
+                        <div className='flex gap-5 pb-3'>
                             <div className='flex flex-col'>
                                 <p className='text-gray-600 text-[13px]'>Followers</p>
-                                <p className='text-[13px] font-semibold'>1239</p>
+                                <p className='text-[13px] font-semibold'>{ppl.followers} </p>
                             </div>
                             <div className='flex flex-col'>
                                 <p className='text-gray-600 text-[13px]'>Following</p>
-                                <p className='text-[13px] font-semibold'>129</p>
+                                <p className='text-[13px] font-semibold'>{ppl.following} </p>
                             </div>
                         </div>
 
@@ -90,7 +100,7 @@ const PeoplesProfile = () => {
                         <div className='bg-white rounded-md border-solid border-[1px] border-gray-400 p-3 w-[100%]'>
                             <p className='font-bold pb-2'>Intro</p>
                             <p className='flex items-center gap-2'>
-                                <GoLocation /> Lives in <span className='font-semibold'>Casablanca, Morocco</span>
+                            <GoLocation /> Lives in <span className='font-semibold'>{ppl.location}</span>
                             </p>
                         </div>
 
@@ -144,7 +154,14 @@ const PeoplesProfile = () => {
                     </div>
                 </div>
             </div>
+                    </div>
+                </div>
+
+            </div>
         </div>
+
+        </>
+
     );
 };
 
