@@ -84,7 +84,7 @@ export const Side = () => {
                   />
                   <p
                     onClick={() => {
-                      navigate("/store");
+                      navigate("/market");
                     }}
                     className="font-bold text-[#6e009e] cursor-pointer hover:text-[#e040fb]"
                   >

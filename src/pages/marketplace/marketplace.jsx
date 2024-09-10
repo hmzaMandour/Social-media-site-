@@ -2,6 +2,8 @@ import React, { useRef, useState } from 'react';
 import { JsonData } from '../../constant';
 import images from '../../constant/images';
 import { FaCloudDownloadAlt } from 'react-icons/fa';
+import { Navbar } from '../../layouts/navBar';
+import { Side } from '../sidebar/sidebar';
 
 const Marketplace = () => {
     const fileInputRef = useRef(null);
@@ -45,22 +47,35 @@ const Marketplace = () => {
     };
 
     return (
-        <div className='flex flex-wrap justify-center gap-5 rounded-lg'>
-            <div className='flex mt-3 mb-1 gap-[44vw]'>
+
+
+      <div>
+          <div className="bg-white"><Navbar /></div>
+        <div className="flex justify-around pt-[25px]">
+          <div>
+            <Side />
+          </div>
+          <div>
+            <div>
+
+            <div className='flex mt-3 mb-1 pb-6 justify-around items-center'>
                 <h1 className='font-medium text-xl'>Marketplace</h1>
                 <input
                     onChange={(e) => setSearch(e.target.value)}
                     type="search"
                     placeholder='Start typing....'
-                    className='border-2 solid border-black rounded-3xl px-4 py-1'
+                    className='border-2 solid h-[45px] w-[400px] border-black rounded-3xl px-4 py-1'
                 />
             </div>
+             
+        <div className='flex flex-wrap justify-center gap-3 rounded-lg'>
+           
 
             {JsonData.product
                 .filter((item) => search.toLowerCase() === '' || item.title.toLowerCase().includes(search.toLowerCase()))
                 .map((e) => (
                     <div key={e.id} >
-                        <div className='flex flex-col w-[28vw] h-[45vh] shadow-md rounded-xl'>
+                        <div className='flex flex-col w-[22vw] h-[45vh] shadow-md rounded-xl'>
                              
                             <img className='w-full h-[62%] rounded-lg' src={images[e.product1]} alt={e.title} />
                             <div className='bg-white h-[38%] rounded-lg mt-0 pt-2 ml-0'>
@@ -68,17 +83,17 @@ const Marketplace = () => {
                                     <p className='text-black flex ml-0 font-semibold text-xl'>{e.price}</p>
                                     <p className='pl-1 text-gray-500 text-xs font-medium mb-3 ml-0'>{e.title}</p>
                                 </div>
-                                <div className='flex mr-3 ml-3'>
+                                <div className='flex mr-3 ml-3  justify-center items-center justify-between'>
                                     <div className='flex justify-center items-center gap-1'>
                                         <span>
-                                            <svg className="w-[2vw] h-[2vw] mt-1 ml-0 text-[#e040fb] dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                            <svg className="w-[20px] h-[20px] mt-1 ml-0 text-[#e040fb] dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                                                 <path stroke="currentColor" strokeWidth="2" d="M11.083 5.104c.35-.8 1.485-.8 1.834 0l1.752 4.022a1 1 0 0 0 .84.597l4.463.342c.9.069 1.255 1.2.556 1.771l-3.33 2.723a1 1 0 0 0-.337 1.016l1.03 4.119c.214.858-.71 1.552-1.474 1.106l-3.913-2.281a1 1 0 0 0-1.008 0L7.583 20.8c-.764.446-1.688-.248-1.474-1.106l1.03-4.119A1 1 0 0 0 6.8 14.56l-3.33-2.723c-.698-.571-.342-1.702.557-1.771l4.462-.342a1 1 0 0 0 .84-.597l1.753-4.022Z" />
                                             </svg>
                                         </span>
                                         <p className='text-xs font-semibold mt-2 text-gray-500'>{e.rate}</p>
                                     </div>
-                                    <div className='ml-24'>
-                                        <p className='text-gray-500 text-xs font-semibold mt-2'>{e.sold}</p>
+                                    <div >
+                                        <p className='text-gray-500 text-xs pl-[150px] font-semibold mt-2'>{e.sold}</p>
                                     </div>
                                 </div>
                             </div>
@@ -162,6 +177,13 @@ const Marketplace = () => {
                 </div>
             </div>
         </div>
+            </div>
+           
+          </div>
+        </div>
+
+
+      </div>
     );
 };
 
