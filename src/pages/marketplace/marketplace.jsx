@@ -52,7 +52,7 @@ const Marketplace = () => {
       <div>
           <div className="bg-white"><Navbar /></div>
         <div className="flex justify-around pt-[25px]">
-          <div>
+          <div className='pl-[35px]'>
             <Side />
           </div>
           <div>
