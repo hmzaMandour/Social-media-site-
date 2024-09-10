@@ -31,10 +31,10 @@ export const AboutSocial = () => {
         {/* hero about */}
         <div
           className={
-            darkMode ? "bg-black text-white  h-screen" : "bg-white text-black"
+            darkMode ? "bg-black text-white  h-[140vh]" : "bg-white text-black h-[140vh] "
           }
         >
-          <div className="flex gap-10   pt-8 px-10 ">
+          <div className="fullPage flex gap-10   pt-8 px-10  ">
             <div className="left-part flex flex-col gap-20">
               {/* nav bar */}
               <nav className="flex justify-between pt-5 m-0 items-center">
@@ -84,7 +84,7 @@ export const AboutSocial = () => {
             <div className="right-part">
               <img
                 src={images.home}
-                className="rounded-3xl w-[110vw] h-[90vh] shadow-[0_10px_20px_rgba(224,64,251,_0.5)] object-cover"
+                className="image rounded-3xl w-[110vw] h-[90vh] shadow-[0_10px_20px_rgba(224,64,251,_0.5)] object-cover"
               />
             </div>
           </div>

@@ -126,3 +126,27 @@ body {
 
   border-radius: 20px;
 }
+
+
+
+@media (max-width: 376px) {
+  .fullPage{
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 5vh;
+  }
+
+  .fullPage button{
+    padding: 1px 25px;
+    font-size: 8px;
+  }
+
+  .fullPage h1{
+    /* width: 100vw; */
+    min-width: 100%;
+  }
+  .fullPage .image{
+    min-width: 100%;
+    height: 40vh;
+  }
+}
