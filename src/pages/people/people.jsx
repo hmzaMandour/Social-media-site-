@@ -6,6 +6,7 @@ import { peoples } from '../../constant/peaple';
 import { Navbar } from '../../layouts/navBar';
 import { Side } from '../sidebar/sidebar';
 import { MdDone } from "react-icons/md";
+import { PeoplesData } from '../../constant';
 
 
 export const People = () => {
@@ -32,7 +33,7 @@ export const People = () => {
               <p className='font-bold text-[20px] pb-5'>People to follow</p>
               {/* the div of all the cards */}
               <div className='flex flex-wrap gap-3'>
-                {peoples.map((e, i) => (
+                {PeoplesData.peoples.map((e, i) => (
                   <div
                     key={e.id} 
                     className=' shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)] inline-block rounded-lg px-3 py-5 w-[17.5vw] bg-white hover:scale-[1.05] hover:duration-300'

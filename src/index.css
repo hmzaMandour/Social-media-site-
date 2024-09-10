@@ -99,6 +99,9 @@ body {
 }
 .epsi {
   height: 10px;
+  box-shadow: 10px 7px 38px 53px rgba(0,0,0,0.75);
+
+
 
   width: 30px;
   clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
