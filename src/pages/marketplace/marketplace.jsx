@@ -29,14 +29,14 @@ const Marketplace = () => {
     const handleAddProduct = () => {
         if (title && price && selectedImage) {
             setNewProducts([...newProducts, {
-                id: newProducts.length + 1, // Simple ID generation, could be improved
+                id: newProducts.length + 1, 
                 title,
                 price,
                 product1: imageUrl,
-                rate: 'Not Rated', // Placeholder value
-                sold: '0' // Placeholder value
+                rate: 'Not Rated', 
+                sold: '0' 
             }]);
-            // Reset input fields
+            
             setSelectedImage(null);
             setImageUrl('');
             setPrice('');
@@ -58,7 +58,7 @@ const Marketplace = () => {
           <div>
             <div>
 
-            <div className='flex mt-3 mb-1 pb-6 justify-around items-center'>
+            <div className='flex mt-3 mb-1 gap-[350px] pb-6 justify-around items-center'>
                 <h1 className='font-medium text-xl'>Marketplace</h1>
                 <input
                     onChange={(e) => setSearch(e.target.value)}
