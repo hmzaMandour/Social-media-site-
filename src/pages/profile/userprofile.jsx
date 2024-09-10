@@ -18,8 +18,8 @@ export const UserProfile = () => {
 
   return (
     <>
-      <div className="px-10 pb-10">
-        <p className="font-bold text-[20px] pb-5">Edit Profile</p>
+      <div >
+        <p className="font-bold text-[20px] pb-5 text-center"> Profile</p>
 
         <div className="shadow-[0_3px_10px_rgb(0,0,0,0.2)] rounded-2xl p-5 bg-white ">
           <div className="userPic flex  items-center gap-5 border-b-[1px] border-gray-400 pb-10 pt-5 px-10">

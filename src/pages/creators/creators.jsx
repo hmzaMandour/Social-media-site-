@@ -11,7 +11,7 @@ export const Creators = () => {
         <>
         
 
-        <div className='h-[450px] w-[25vw] rounded-[20px] overflow-y-scroll bg-white  '>
+        <div className='creators h-[450px] w-[25vw] rounded-[20px] overflow-y-scroll bg-white  '>
             <h1 className='text-[15px] font-semibold  py-5 px-6'>Content Creators:</h1>
             <div onChange={(e) => setSearch(e.target.value)} className='w-[100%] flex justify-center items-center sticky top-4 z-10'>
                 <input placeholder='Search' className='h-[45px] w-[250px] rounded-full pl-3 border-[1px] ' type="search" />

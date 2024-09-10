@@ -155,12 +155,12 @@ export const Post = () => {
 
   return (
     <>
-      <div className="flex justify-around">
+      <div className="flex justify-around ">
         <div>
           <div>
             <form
               onSubmit={handleCreatePost}
-              className="py-[5vh] flex gap-x-3 flex-col gap-4 "
+              className="py-[5vh] flex gap-x-8 flex-col gap-4"
             >
               <div className="flex gap-3 items-center">
                 <img
@@ -192,7 +192,7 @@ export const Post = () => {
               <button
                 type="button"
                 onClick={triggerFileInput}
-                className="rounded-full font-semibold flex gap-[150px] mt-3 justify-center items-center"
+                className="btn rounded-full font-semibold flex gap-[150px] mt-3 justify-center items-center"
               >
                 <span className="text-sm flex gap-2 items-center">
                   <CgLivePhoto className="text-[#e040fb]" />
@@ -217,7 +217,7 @@ export const Post = () => {
             {user.posts.map((post, index) => (
               <div
                 key={index}
-                className="bg-white shadow-lg w-[500px] rounded-lg p-4 mb-6 mx-auto"
+                className="post bg-white shadow-lg w-[500px] rounded-lg p-4 mb-6 mx-auto"
               >
                 <div className="flex items-center justify-between mb-4">
                   <div className="flex items-center">
@@ -263,7 +263,7 @@ export const Post = () => {
 
             {isModalOpen && indexofposts !== "" && (
               <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
-                <div className="bg-white p-6 rounded-lg shadow-lg max-w-md w-full relative">
+                <div className="comments bg-white p-6 rounded-lg shadow-lg max-w-md w-full relative">
                   <h2 className="text-xl font-bold mb-4">Comments</h2>
                   <button
                     onClick={closeModal}
@@ -277,7 +277,7 @@ export const Post = () => {
                       value={inputChange}
                       onChange={(e) => setInputChange(e.target.value)}
                       placeholder="Add a comment..."
-                      className="flex-1 border border-gray-300 rounded px-2 py-1"
+                      className="commentsInput flex-1 border border-gray-300 rounded px-2 py-1"
                     />
                     <button
                       type="submit"

@@ -12,7 +12,7 @@ export const UserPage = () => {
     <>
       <div className="w-[99vw]">
         <Navbar />
-        <div className="flex pt-5 pl-10">
+        <div className="flex pt-5 pl-10 gap-7">
           <div>
             <Side />
           </div>

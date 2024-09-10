@@ -35,7 +35,7 @@ export const Stories = () => {
         <img
           src={fileURL}
           alt={file.name}
-          className="filter brightness-75 rounded-[25px] bg-cover object-cover w-[120px] h-[200px]"
+          className="filter img1 brightness-75 rounded-[25px] bg-cover object-cover w-[120px] h-[200px]"
         />
       );
     } else if (file.type.startsWith("video/")) {
@@ -45,7 +45,7 @@ export const Stories = () => {
           autoPlay
           loop
           muted
-          className="filter brightness-75 rounded-[25px] bg-cover object-cover w-[120px] h-[200px]"
+          className="filter img2 brightness-75 rounded-[25px] bg-cover object-cover w-[120px] h-[200px]"
         />
       );
     } else {
@@ -55,10 +55,10 @@ export const Stories = () => {
   return (
     <>
       <div className="flex p-4 items-start rounded-[20px] bg-[#eeeeee8f]">
-        <div className="rounded-[25px] bg-cover object-cover w-[120px] h-[200px] bg-[#6e009e] m-[10px] hover:bg-[#933bb9] animated-box">
+        <div className="rounded-[25px] img3 bg-cover object-cover w-[120px] h-[200px] bg-[#6e009e] m-[10px] hover:bg-[#933bb9] animated-box">
           <label
             htmlFor="file-upload"
-            className="flex items-center justify-center gap-3 rounded-[25px] cursor-pointer ml-[30px] mx-[30px] my-[19px] w-[100%] h-[200px]"
+            className="flex items-center img4 justify-center gap-3 rounded-[25px] cursor-pointer ml-[30px] mx-[30px] my-[19px] w-[100%] h-[200px]"
           >
             <MdOutlineAddAPhoto size={30} className="text-[#ffff]" />
             <input

@@ -37,7 +37,7 @@ export const Navbar = () => {
             </p>
           </div>
 
-          <div>
+          <div className="searchBar">
             <div className="relative">
               <IoSearch className="absolute left-3 top-1/2 transform -translate-y-1/2 text-[#e040fb] " />
               <input
@@ -48,21 +48,24 @@ export const Navbar = () => {
             </div>
           </div>
 
-          <div className="flex  items-center gap-[30px]">
+        <div className="flex  items-center gap-[30px]">
           <img
               onClick={mymodal}
               src={user.img || userPng}
               alt=""
               className="w-10 h-10 rounded-[50%] cursor-pointer"
             />
-            <MdOutlineDarkMode
-              size={24}
-              className="text-[#e040fb] cursor-pointer"
-            />
-            <MdNotificationsNone
-              size={24}
-              className="text-[#e040fb] cursor-pointer"
-            />
+            <div className="icons flex  items-center gap-[20px]">
+              <MdOutlineDarkMode
+                size={24}
+                className="text-[#e040fb] cursor-pointer"
+              />
+              <MdNotificationsNone
+                size={24}
+                className="text-[#e040fb] cursor-pointer"
+              />
+            </div>
+
 
             
             {modal && (

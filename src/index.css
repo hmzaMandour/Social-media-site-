@@ -152,4 +152,38 @@ body {
     min-width: 100%;
     height: 40vh;
   }
+
+  .icons{
+    display: none;
+  }
+  .searchBar{
+    display: none;
+  }
+  .hero{
+    display: flex;
+    flex-direction: column;
+  }
+  .sideBar,
+  .creators{
+    display: none;
+  }
+  form{
+    width: 100vw;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .btn{
+    display: flex;
+    gap: 4vw;
+  }
+  .post{
+    width: 90vw;
+  }
+  /* .img1 ,
+  .img2 ,
+  .img3 ,
+  .img4{
+    width:90px ;
+    height:150px ;
+  } */
 }

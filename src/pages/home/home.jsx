@@ -10,7 +10,7 @@ export const Homepage = () => {
   return (
     <>
       <div className="bg-white"><Navbar /></div>
-      <div className="flex justify-around pt-[25px]">
+      <div className="hero flex justify-around pt-[25px]">
         <div>
           <Side />
         </div>

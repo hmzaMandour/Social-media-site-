@@ -18,7 +18,7 @@ export const Side = () => {
 
   return (
     <>
-      <div className="h-full w-[20vw] ">
+      <div className="h-full w-[18vw] ">
         <div className="">
           {/* side bar */}
           <div className="sideBar flex flex-col gap-5 rounded-xl w-[100%] ">
