@@ -179,11 +179,9 @@ body {
   .post{
     width: 90vw;
   }
-  /* .img1 ,
-  .img2 ,
-  .img3 ,
-  .img4{
-    width:90px ;
-    height:150px ;
-  } */
+
+   .img{
+      width:80px ;
+      height:130px ;
+   }
 }

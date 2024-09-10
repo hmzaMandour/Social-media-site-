@@ -21,7 +21,7 @@ const PeoplesProfile = () => {
     const index = parseInt(id, 10);
     const ppl = PeoplesData.peoples[index];
 
-    // Handle case where `ppl` might be undefined
+    
     if (!ppl) {
         return <div>Profile not found</div>;
     }

@@ -35,7 +35,7 @@ export const Stories = () => {
         <img
           src={fileURL}
           alt={file.name}
-          className="filter img1 brightness-75 rounded-[25px] bg-cover object-cover w-[120px] h-[200px]"
+          className="filter img1 brightness-75 rounded-[25px] bg-cover img object-cover w-[120px] h-[200px]"
         />
       );
     } else if (file.type.startsWith("video/")) {
@@ -45,7 +45,7 @@ export const Stories = () => {
           autoPlay
           loop
           muted
-          className="filter img2 brightness-75 rounded-[25px] bg-cover object-cover w-[120px] h-[200px]"
+          className="filter img2 brightness-75 rounded-[25px] bg-cover img object-cover w-[120px] h-[200px]"
         />
       );
     } else {
@@ -55,7 +55,7 @@ export const Stories = () => {
   return (
     <>
       <div className="flex p-4 items-start rounded-[20px] bg-[#eeeeee8f]">
-        <div className="rounded-[25px] img3 bg-cover object-cover w-[120px] h-[200px] bg-[#6e009e] m-[10px] hover:bg-[#933bb9] animated-box">
+        <div className="rounded-[25px] img3 bg-cover object-cover img w-[120px] h-[200px] bg-[#6e009e] m-[10px] hover:bg-[#933bb9] animated-box">
           <label
             htmlFor="file-upload"
             className="flex items-center img4 justify-center gap-3 rounded-[25px] cursor-pointer ml-[30px] mx-[30px] my-[19px] w-[100%] h-[200px]"
@@ -94,7 +94,7 @@ export const Stories = () => {
               </div>
             ))
           ) : (
-            <div className="w-[120px] h-[200px] rounded-[25px] m-[10px] border border-solid flex justify-center pt-3 bg-white items-center">
+            <div className="w-[120px] h-[200px] img rounded-[25px] m-[10px] border border-solid flex justify-center pt-3 bg-white items-center">
               <img
                 src="https://cdn.dribbble.com/users/22691/screenshots/1958250/attachments/340010/Button_800x600.gif"
                 alt="Placeholder"
