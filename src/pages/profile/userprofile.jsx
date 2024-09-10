@@ -105,10 +105,10 @@ export const UserProfile = () => {
 
               {/* right part */}
               <div>
-                
+              <Post />
 
                 {/* posts div */}
-                <div className=" flex justify-between rounded-md border-solid border-[1px] border-gray-400 p-3 w-[100%]"><Post /></div>
+                {/* <div className=" flex justify-between rounded-md border-solid border-[1px] border-gray-400 p-3 w-[99%]"><Post /></div> */}
               </div>
             </div>
           </div>

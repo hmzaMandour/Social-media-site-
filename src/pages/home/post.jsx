@@ -160,7 +160,7 @@ export const Post = () => {
           <div>
             <form
               onSubmit={handleCreatePost}
-              className="py-[5vh] flex gap-x-8 flex-col gap-4"
+              className="py-[5vh] flex gap-x-3 flex-col gap-4 "
             >
               <div className="flex gap-3 items-center">
                 <img
@@ -196,7 +196,7 @@ export const Post = () => {
               >
                 <span className="text-sm flex gap-2 items-center">
                   <CgLivePhoto className="text-[#e040fb]" />
-                  Live Video
+                  Live 
                 </span>
                 <span className="text-sm flex gap-2 items-center">
                   <RiGalleryLine className="text-[#e040fb]" />
