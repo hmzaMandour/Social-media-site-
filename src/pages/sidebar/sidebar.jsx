@@ -98,7 +98,7 @@ export const Side = () => {
                   />
                   <p
                     onClick={() => {
-                      navigate("/groupes");
+                      navigate("/groups");
                     }}
                     className="font-bold text-[#6e009e] cursor-pointer hover:text-[#e040fb]"
                   >

@@ -21,6 +21,7 @@ export default {
     Book:require("../assets/images/book.jpg"),
     Tennis:require("../assets/images/tennis.jpg"),
     horse:require("../assets/images/horse.jpg"),
+    fridatdarkMode : require ('../assets/images/Screenshot__72_-removebg-preview.png'),
 
 
 }

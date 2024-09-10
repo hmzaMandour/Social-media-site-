@@ -40,7 +40,14 @@ export const AboutSocial = () => {
               <nav className="flex justify-between pt-5 m-0 items-center">
                 <div className="logo m-0">
                   <p className="font-bold m-0 text-[28px] cursor-pointer text-[#6e009e]">
-                  <img className="w-32" src={images.fridat} alt="" />
+                  {/* <img className="w-32" src={images.fridat} alt="" /> */}
+                  <img 
+                    className="w-32" 
+                    src={darkMode ? images.fridatdarkMode : images.fridat} 
+                    alt="Fridat Logo" 
+                  />
+
+                  
                   </p>
                 </div>
                 <div className="buttons flex gap-2">

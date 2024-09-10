@@ -13,6 +13,7 @@ function App() {
     gender: "",
     img: "",
     posts: [],
+    groups:[]
   });
 
   return (

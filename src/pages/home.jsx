@@ -17,10 +17,10 @@ import { UserPage } from "./profile/userpage";
 import { Settings } from "./settings/settings";
 import { Photo } from "./profile/profilepic";
 import { People } from "./people/people";
-import Group from "./Groups/groups";
 import Marketplace from "./marketplace/marketplace";
 import { Homepage } from "./home/home";
 import PeoplesProfile from "./profile/peopleprofiles";
+import { Group } from "./Groups/groups";
 
 export const friendsArr = createContext(null);
 
@@ -34,7 +34,7 @@ export const Home = () => {
           <Route path="/profile" element={<UsersProfile />}></Route>
           <Route path="/people/:id" element={<PeoplesProfile />}></Route>
           <Route path="/market" element={< Marketplace />} />
-          <Route path="/group" element={<Group />} />
+          <Route path="/groups" element={<Group />} />
           <Route path="/people" element={<People />} />
           <Route path="/userpage" element={<UserPage />} />
           <Route path="/photo" element={<Photo />} />
