@@ -10,6 +10,7 @@ import { BsPeople } from "react-icons/bs";
 import { MdOutlineDarkMode } from "react-icons/md";
 import { MdNotificationsNone } from "react-icons/md";
 import { dataContext } from "../../App";
+import userPng from "../../assets/images/user.png"
 
 export const Side = () => {
   let { user, setUser } = useContext(dataContext);
@@ -25,9 +26,9 @@ export const Side = () => {
               {/* left part */}
               <div className="">
                 <img
-                  src={user.img}
+                  src={user.img || userPng}
                   alt=""
-                  className="w-10 h-10 bg-black rounded-[50%] cursor-pointer"
+                  className="w-10 h-10 rounded-[50%] cursor-pointer"
                   onClick={() => {
                     navigate("/userpage");
                   }}

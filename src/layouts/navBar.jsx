@@ -11,6 +11,8 @@ import images from "../constant/images";
 
 import { IoSearch } from "react-icons/io5";
 import { dataContext } from "../App";
+import userPng from "../assets/images/user.png"
+
 
 export const Navbar = () => {
   let { user, setUser } = useContext(dataContext);
@@ -49,9 +51,9 @@ export const Navbar = () => {
           <div className="flex  items-center gap-[30px]">
           <img
               onClick={mymodal}
-              src={user.img}
+              src={user.img || userPng}
               alt=""
-              className="w-10 h-10 bg-black rounded-[50%] cursor-pointer"
+              className="w-10 h-10 rounded-[50%] cursor-pointer"
             />
             <MdOutlineDarkMode
               size={24}

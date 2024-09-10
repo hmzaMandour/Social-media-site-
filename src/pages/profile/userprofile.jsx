@@ -10,6 +10,8 @@ import { HiMiniDevicePhoneMobile } from "react-icons/hi2";
 import { dataContext } from "../../App";
 import { CreatePost } from "../home/createposts";
 import {  Post } from "../../pages/home/post"
+import userPng from "../../assets/images/user.png"
+
 
 export const UserProfile = () => {
   let { user, setUser } = useContext(dataContext);
@@ -22,9 +24,9 @@ export const UserProfile = () => {
         <div className="shadow-[0_3px_10px_rgb(0,0,0,0.2)] rounded-2xl p-5 bg-white ">
           <div className="userPic flex  items-center gap-5 border-b-[1px] border-gray-400 pb-10 pt-5 px-10">
             <img
-              src={user.img}
+              src={user.img || userPng}
               alt=""
-              className="bg-red-300 w-[130px] h-[130px] rounded-[50%] "
+              className=" w-[130px] h-[130px] rounded-[50%] "
             />
 
             <div>

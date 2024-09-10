@@ -5,7 +5,6 @@ import { Home } from "./pages/home";
 export const dataContext = createContext();
 
 function App() {
- 
   const [user, setUser] = useState({
     name: "",
     email: "",
@@ -14,7 +13,6 @@ function App() {
     gender: "",
     img: "",
     posts: [],
-
   });
 
   return (
