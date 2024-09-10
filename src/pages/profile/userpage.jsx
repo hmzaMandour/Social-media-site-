@@ -12,7 +12,7 @@ export const UserPage = () => {
     <>
       <div>
         <Navbar />
-        <div className="flex bg-[#6f009e09] pt-5 pl-10">
+        <div className="flex pt-5 pl-10">
           <div>
             <Side />
           </div>

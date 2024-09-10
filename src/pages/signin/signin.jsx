@@ -2,7 +2,7 @@ import React, { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import logo from "../../assets/images/image.png";
 import images from "../../constant/images";
-import { CiDark } from "react-icons/ci";
+import { MdOutlineDarkMode } from "react-icons/md";
 import { dataContext } from "../../App";
 import { friendsArr } from "../home";
 
@@ -73,20 +73,23 @@ export const SignIn = () => {
 
   return (
     <>
+    <div className="bg-white h-screen pt-1">
       <nav className="flex justify-between pt-5 px-10 m-0 items-center ">
         <div className="logo m-0">
-          <p
+          <img onClick={() => navigate("/")} className="w-32" src={images.fridat} alt="" />
+
+          {/* <p
             onClick={() => {
               navigate("/");
             }}
             className="font-bold m-0 text-[28px] cursor-pointer text-[#6e009e]"
           >
-            FRIDAT<span className="text-[#e040fb] text-3xl">.</span>
-          </p>
+            FRIDAT<span className="text-[#e040fb] text-3xl">.</span> 
+          </p>*/}
         </div>
         <div>
           <button>
-            <CiDark size={24} className="text-[#e040fb]" />
+            <MdOutlineDarkMode size={24} className="text-[#e040fb]" />
           </button>
         </div>
       </nav>
@@ -142,6 +145,7 @@ export const SignIn = () => {
               >
                 LOG IN
               </button>
+
             </div>
           </div>
 
@@ -154,6 +158,7 @@ export const SignIn = () => {
           </div>
         </div>
       </div>
+    </div>
     </>
   );
 };

@@ -46,7 +46,7 @@ export const Settings = () => {
     <>
       <div>
         <Navbar />
-        <div className="flex bg-[#6f009e09] pt-5 pl-10">
+        <div className="flex pt-5 pl-10">
           <div>
             <Side />
           </div>
@@ -60,7 +60,7 @@ export const Settings = () => {
                   <GrContactInfo className="text-[#e040fb]" />
                   <p className="font-semibold">Edit personal info</p>
                 </div>
-                <div className="text-center m-auto flex items-center gap-3">
+                <div className="text-center m-auto flex flex-col items-center gap-3">
                   <img
                     src={uploadedImg || "default-image-url.jpg"} // Display uploaded or default image
                     alt=""

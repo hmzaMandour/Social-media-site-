@@ -30,7 +30,7 @@ export const Navbar = () => {
   return (
     <>
       <div>
-        <nav className="flex justify-between px-10 m-0 items-center  h-[13vh] bg-white">
+        <nav className="flex justify-between px-10 m-0 items-center  h-[13vh] bg-white ">
           <div className="logo m-0">
             <p className="font-bold m-0 text-[28px] cursor-pointer text-[#6e009e]">
               <img className="w-32" src={images.fridat} alt="" />
@@ -67,8 +67,8 @@ export const Navbar = () => {
             
             {modal && (
               <div className="flex justify-center items-center absolute top-[70px] right-[45px] flex-col">
-                <div className="epsi bg-[#f268e0]"></div>
-                <div className="bg-[#f268e0] z-30 opsi h-[400px] w-[250px] rounded-[20px] flex justify-center items-center flex-col gap-2">
+                <div className="epsi shadow-[0_3px_10px_rgb(0,0,0,0.2)] bg-white"></div>
+                <div className="bg-white shadow-[0_3px_10px_rgb(0,0,0,0.2)] z-30 opsi h-[400px] w-[250px] rounded-[20px] flex justify-center items-center flex-col gap-2">
                   <div className="h-[60px] w-[60px] bg-red-500 rounded-full">
                     <img
                       src={user.img}
@@ -80,40 +80,40 @@ export const Navbar = () => {
                     onClick={() => {
                       navigate("/userpage");
                     }}
-                    className="cursor-pointer h-[60px] w-[80%]  hover:bg-[#e040fb] rounded-[20px] flex justify-center items-center gap-[85px]"
+                    className="cursor-pointer h-[60px] w-[80%]  hover:bg-[#6f009e13] rounded-[20px] flex justify-center items-center gap-[85px]"
                   >
-                    <div className="text-2xl text-[#e7e9ec] p-2 rounded-full bg-[#6e009e]">
-                      <CgProfile />
+                    <div className=" p-2 rounded-full text-[#e040fb] cursor-pointer">
+                      <CgProfile size={25} />
                     </div>
-                    <div className="text-[#e2e4e8]">Profile</div>
+                    <div className="font-bold text-[#6e009e] cursor-pointer  text-[14px]">Profile</div>
                   </div>
-                  <div className="cursor-pointer h-[60px] w-[80%] bg-[#] hover:bg-[#e040fb] rounded-[20px] flex justify-center items-center gap-[55px]">
-                    <div className="text-2xl text-[#e7e9ec] p-2 rounded-full bg-[#6e009e]">
-                      <MdDarkMode />
+                  <div className="cursor-pointer h-[60px] w-[80%] bg-[#] hover:bg-[#6f009e13] rounded-[20px] flex justify-center items-center gap-[55px]">
+                    <div className="p-2 rounded-full text-[#e040fb] cursor-pointer">
+                      <MdOutlineDarkMode size={25}/>
                     </div>
-                    <div className="text-[#e2e4e8]">DarkMode</div>
+                    <div className="font-bold text-[#6e009e] cursor-pointer text-[14px]">Dark mode</div>
                   </div>
                   <div
                     onClick={() => {
                       navigate("/settings");
                     }}
-                    className=" cursor-pointer h-[60px] w-[80%] bg-[#] hover:bg-[#e040fb] rounded-[20px] flex justify-center items-center gap-[70px]"
+                    className=" cursor-pointer h-[60px] w-[80%] bg-[#] hover:bg-[#6f009e13] rounded-[20px] flex justify-center items-center gap-[70px]"
                   >
-                    <div className="text-2xl text-[#e7e9ec] p-2 rounded-full bg-[#6e009e]">
-                      <MdAdminPanelSettings />
+                    <div className="p-2 text-[#e040fb] cursor-pointer">
+                      <MdAdminPanelSettings size={25}/>
                     </div>
-                    <div className="text-[#e2e4e8]">Settings</div>
+                    <div className="font-bold text-[#6e009e] cursor-pointer  text-[14px]">Settings</div>
                   </div>
                   <div
                     onClick={() => {
                       navigate("/");
                     }}
-                    className="cursor-pointer h-[60px] w-[80%] bg-[#] hover:bg-[#e040fb] rounded-[20px] flex justify-center items-center gap-[70px]"
+                    className="cursor-pointer h-[60px] w-[80%] bg-[#] hover:bg-[#6f009e13] rounded-[20px] flex justify-center items-center gap-[70px]"
                   >
-                    <div className="text-2xl text-[#e7e9ec] p-2 rounded-full bg-[#6e009e]">
-                      <MdLogout />
+                    <div className="p-2 rounded-full text-[#e040fb] cursor-pointer">
+                      <MdLogout size={25} />
                     </div>
-                    <div className="text-[#e2e4e8]">LogOut</div>
+                    <div className="font-bold text-[#6e009e] cursor-pointer text-[14px] ">LogOut</div>
                   </div>
                 </div>
               </div>
